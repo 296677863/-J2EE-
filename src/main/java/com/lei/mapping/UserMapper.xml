@@ -13,4 +13,11 @@
  		<result column="mobile" property="mobile" jdbcType="varchar"/>
  		<result column="type" property="type" jdbcType="int"/>
  	</resultMap>
+ 	
+ 	<insert id="insert" parameterType="com.lei.model.User">
+ 		insert into t_user(id,email,face,mobile,nichName,
+ 		password,regTime,sex,trueName,type) values(#{id},#{email},#{face},#{mobile},
+ 		#{nichName},#{password},#{regTime},#{sex},#{trueName},#{type})
+ 	</insert>
+ 	
 </mapper>
