@@ -2,6 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.lei.dao.UserMapper" >
  	<resultMap type="com.lei.model.User" id="ResultUser">
- 		
+ 		<id column="id" property="id" jdbcType="int"/>
+ 		<result column="nickName" property="nickName" jdbcType="varchar"/>
+ 		<result column="trueName" property="trueNmae" jdbcType="varchar"/>
+ 		<result column="password" property="password" jdbcType="varchar"/>
+ 		<result column="sex" property="sex" jdbcType="varchar"/>
+ 		<result column="face" property="face" jdbcType="varchar"/>
+ 		<result column="regTime" property="regTime" jdbcType="datetime"/>
+ 		<result column="emaill" property="email" jdbcType="varchar"/>
+ 		<result column="mobile" property="mobile" jdbcType="varchar"/>
+ 		<result column="type" property="type" jdbcType="int"/>
  	</resultMap>
 </mapper>
