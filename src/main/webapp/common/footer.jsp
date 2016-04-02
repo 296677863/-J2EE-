@@ -1,11 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title></title>
-</head>
-<body>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 
-</body>
-</html>
+<footer class="footer">
+      <div class="container">
+        <p class="text-muted">Copyright &copy; 2016.lei</p>
+      </div>
+</footer>

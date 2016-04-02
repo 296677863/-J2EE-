@@ -18,6 +18,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<title>论坛-首页</title>
     <!-- start: CSS -->
     <link id="bootstrap-style" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+     <!-- Custom styles for this template -->
+    <link href="css/sticky-footer.css" rel="stylesheet">
+    <link href="css/grid.css" rel="stylesheet">
     <!-- end: CSS -->
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
