@@ -2,66 +2,74 @@ package com.lei.model;
 
 import java.util.Date;
 
-
-/**
- * <p>Title: Reply.java</p>
- * <p>Description: </p>
- * @author lei
- * @date 2016年3月26日 下午10:27:24 
- * @version 1.0
- */
 public class Reply {
-	
-	private int id;//回复编号
-	private int userId;//回复人
-	private int topicId;//所属主贴
-	private String title;//跟帖主题
-	private String content;//跟帖内容
-	private  Date publishTime;//跟帖时间
-	private Date modifyTime;//修改时间
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public int getUserId() {
-		return userId;
-	}
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
-	public int getTopicId() {
-		return topicId;
-	}
-	public void setTopicId(int topicId) {
-		this.topicId = topicId;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getContent() {
-		return content;
-	}
-	public void setContent(String content) {
-		this.content = content;
-	}
-	public Date getPublishTime() {
-		return publishTime;
-	}
-	public void setPublishTime(Date publishTime) {
-		this.publishTime = publishTime;
-	}
-	public Date getModifyTime() {
-		return modifyTime;
-	}
-	public void setModifyTime(Date modifyTime) {
-		this.modifyTime = modifyTime;
-	}
-	
-	
+    private Integer id;
 
+    private Date modifytime;
+
+    private Date publishtime;
+
+    private Integer topicid;
+
+    private Integer userid;
+
+    private String title;
+
+    private String content;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Date getModifytime() {
+        return modifytime;
+    }
+
+    public void setModifytime(Date modifytime) {
+        this.modifytime = modifytime;
+    }
+
+    public Date getPublishtime() {
+        return publishtime;
+    }
+
+    public void setPublishtime(Date publishtime) {
+        this.publishtime = publishtime;
+    }
+
+    public Integer getTopicid() {
+        return topicid;
+    }
+
+    public void setTopicid(Integer topicid) {
+        this.topicid = topicid;
+    }
+
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
 }

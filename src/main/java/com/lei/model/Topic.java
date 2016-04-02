@@ -2,108 +2,94 @@ package com.lei.model;
 
 import java.util.Date;
 
-
-/**
- * <p>Title: Topic.java</p>
- * <p>Description: </p>
- * @author lei
- * @date 2016年3月26日 下午8:17:30 
- * @version 1.0
- */
 public class Topic {
-	
-	private int id;	//帖子id
-	
-	private int sectionId;//所属板块
-	
-	private int userId;//发帖人
-	
-	private String title;//贴子标题
-	
-	private String content;//帖子内容
-	
-	private Date publishTime;//发帖时间
-	
-	private Date modifyTime;//修改时间
-	
-	private int good=0;//是否精华	0为普通；1为精华
-	
-	private int top=0;//是否置顶	0为普通；1为置顶
+    private Integer id;
 
-	public int getId() {
-		return id;
-	}
+    private Date modifytime;
 
-	public void setId(int id) {
-		this.id = id;
-	}
-	
-	
+    private Date publishtime;
 
-	public int getSectionId() {
-		return sectionId;
-	}
+    private String title;
 
-	public void setSectionId(int sectionId) {
-		this.sectionId = sectionId;
-	}
+    private Integer sectionid;
 
-	public int getUserId() {
-		return userId;
-	}
+    private Integer userid;
 
-	public void setUserId(int userId) {
-		this.userId = userId;
-	}
+    private Integer good;
 
-	public String getTitle() {
-		return title;
-	}
+    private Integer top;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    private String content;
 
-	public String getContent() {
-		return content;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public Date getPublishTime() {
-		return publishTime;
-	}
+    public Date getModifytime() {
+        return modifytime;
+    }
 
-	public void setPublishTime(Date publishTime) {
-		this.publishTime = publishTime;
-	}
+    public void setModifytime(Date modifytime) {
+        this.modifytime = modifytime;
+    }
 
-	public Date getModifyTime() {
-		return modifyTime;
-	}
+    public Date getPublishtime() {
+        return publishtime;
+    }
 
-	public void setModifyTime(Date modifyTime) {
-		this.modifyTime = modifyTime;
-	}
+    public void setPublishtime(Date publishtime) {
+        this.publishtime = publishtime;
+    }
 
-	public int getGood() {
-		return good;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public void setGood(int good) {
-		this.good = good;
-	}
+    public void setTitle(String title) {
+        this.title = title == null ? null : title.trim();
+    }
 
-	public int getTop() {
-		return top;
-	}
+    public Integer getSectionid() {
+        return sectionid;
+    }
 
-	public void setTop(int top) {
-		this.top = top;
-	}
-	
-	
-	
+    public void setSectionid(Integer sectionid) {
+        this.sectionid = sectionid;
+    }
+
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
+
+    public Integer getGood() {
+        return good;
+    }
+
+    public void setGood(Integer good) {
+        this.good = good;
+    }
+
+    public Integer getTop() {
+        return top;
+    }
+
+    public void setTop(Integer top) {
+        this.top = top;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content == null ? null : content.trim();
+    }
 }
