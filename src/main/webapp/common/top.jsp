@@ -15,7 +15,7 @@
           <a class="navbar-brand" href="#">JAVA学习交流论坛</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav navbar-left">
             	<li ><a href="index.jsp">首　页</a></li>
 				<li><a href="#">申请版主</a></li>
 				<li><a href="#">在线文档</a></li>
