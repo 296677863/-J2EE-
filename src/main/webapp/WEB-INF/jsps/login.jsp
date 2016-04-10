@@ -89,7 +89,7 @@ function checkForm(){
 </head>
 <body>
 <div class="login-box">
-	<h1>java12134论坛登录</h1>
+	<h1>java学习交流论坛登录</h1>
 	<form method="post" action="user/login" onsubmit="return checkForm()">
 		<table>
 			<tr class="name">
@@ -120,7 +120,7 @@ function checkForm(){
 	</form>
 </div>
 
-<div class="bottom">©2015 大斌 <a href="javascript:;" target="_blank">关于</a> <span>java1234</span><img width="13" height="16" src="images/copy_rignt_24.png" /></div>
+<div class="bottom"><a href="javascript:;" target="_blank">关于</a> <span></span><img width="13" height="16" src="images/copy_rignt_24.png" /></div>
 
 <div class="screenbg">
 	<ul>
