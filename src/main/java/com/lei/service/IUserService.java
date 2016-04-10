@@ -10,6 +10,7 @@ import com.lei.model.User;
  * @version 1.0
  */
 public interface IUserService {
-	int insert(User user);
+	public int insert(User user);
+	public User login(User user);
 
 }

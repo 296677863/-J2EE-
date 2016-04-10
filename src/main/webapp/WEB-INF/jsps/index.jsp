@@ -17,26 +17,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>论坛-首页</title>
     <!-- start: CSS -->
-    <link id="bootstrap-style" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link id="bootstrap-style" href="resources/bootstrap/css/bootstrap.min.css" rel="stylesheet">
      <!-- Custom styles for this template -->
-    <link href="css/sticky-footer.css" rel="stylesheet">
-    <link href="css/grid.css" rel="stylesheet">
+    <link href="resources/css/sticky-footer.css" rel="stylesheet">
+    <link href="resources/css/grid.css" rel="stylesheet">
     <!-- end: CSS -->
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="js/ie-emulation-modes-warning.js"></script>
+    <!--[if lt IE 9]><script src="resources/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="resources/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
-      <script src=js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src=resources/js/html5shiv.min.js"></script>
+      <script src="resources/js/respond.min.js"></script>
     <![endif]-->
 	
-	<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
-	<script src="js/ie-emulation-modes-warning.js"></script>
-	<script src="js/jquery.min.js"></script>
-	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="bootstrap/js/bootstrap.js"></script>
+	<link href="resources/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+	<script src="resources/js/ie-emulation-modes-warning.js"></script>
+	<script src="resources/js/jquery.min.js"></script>
+	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
+	<script src="resources/bootstrap/js/bootstrap.js"></script>
 </head>
 <body>
 
@@ -50,6 +50,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<jsp:include page="common/footer.jsp"/>
 
 
-   <script src="js/ie10-viewport-bug-workaround.js"></script>
+   <script src="resources/js/ie10-viewport-bug-workaround.js"></script>
 </body>
 </html>

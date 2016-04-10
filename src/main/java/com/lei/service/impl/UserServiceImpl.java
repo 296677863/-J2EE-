@@ -38,4 +38,11 @@ public class UserServiceImpl implements IUserService {
 		return userMapper.insert(user);
 	}
 
+
+	@Override
+	public User login(User user) {
+		// TODO Auto-generated method stub
+		return userMapper.login(user);
+	}
+
 }

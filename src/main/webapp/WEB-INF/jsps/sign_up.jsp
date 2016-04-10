@@ -18,12 +18,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>用户注册</title>
 <!-- start: CSS -->
-<link id="bootstrap-style" href="bootstrap/css/bootstrap.min.css"
+<link id="bootstrap-style" href="resources/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 <!-- Custom styles for this template -->
-<link href="css/font-awesome.min.css" rel="stylesheet">
-<link href="css/AdminLTE.min.css" rel="stylesheet">
-<link href="css/admin.css" rel="stylesheet">
+<link href="resources/css/font-awesome.min.css" rel="stylesheet">
+<link href="resources/css/AdminLTE.min.css" rel="stylesheet">
+<link href="resources/css/admin.css" rel="stylesheet">
 
 <style type="text/css">
 .login, .register {
@@ -51,16 +51,16 @@
 <!-- end: CSS -->
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-<!--[if lt IE 9]><script src="js/ie8-responsive-file-warning.js"></script><![endif]-->
-<script src="js/ie-emulation-modes-warning.js"></script>
+<!--[if lt IE 9]><script src="resources/js/ie8-responsive-file-warning.js"></script><![endif]-->
+<script src="resources/js/ie-emulation-modes-warning.js"></script>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
-      <script src=js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
+      <script src=resources/js/html5shiv.min.js"></script>
+      <script src="resources/js/respond.min.js"></script>
     <![endif]-->
 
-<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
+<link href="resources/bootstrap/css/bootstrap-responsive.css" rel="stylesheet" />
 
 </head>
 <body class="login">
@@ -128,12 +128,12 @@
 		</div>
 	</div>
 </body>
-<script src="js/ie-emulation-modes-warning.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<script src="bootstrap/js/bootstrap.js"></script>
-<script src="js/jquery.validate.js" type="text/javascript"></script>
-<script src="js/jquery.metadata.js" type="text/javascript"></script>
+<script src="resources/js/ie-emulation-modes-warning.js"></script>
+<script src="resources/js/jquery.min.js"></script>
+<script src="resources/bootstrap/js/bootstrap.min.js"></script>
+<script src="resources/bootstrap/js/bootstrap.js"></script>
+<script src="resources/js/jquery.validate.js" type="text/javascript"></script>
+<script src="resources/sjs/jquery.metadata.js" type="text/javascript"></script>
 <script type="text/javascript">
 jQuery.extend(jQuery.validator.messages, {
 	required : "请填写本字段",

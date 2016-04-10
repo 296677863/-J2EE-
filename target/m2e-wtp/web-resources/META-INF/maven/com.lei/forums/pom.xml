@@ -35,6 +35,11 @@
 		<maven>3.0</maven>
 	</prerequisites>
 	<dependencies>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 		<!-- SPRING begin -->
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
