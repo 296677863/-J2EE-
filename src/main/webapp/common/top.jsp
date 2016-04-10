@@ -26,7 +26,7 @@
           <ul class="nav navbar-nav navbar-right">
 					<!-- <a href="login.jsp">登录</a>| -->
 					<li class="" style="border-left:1px solid #DDDDDD;"><a href="javascript:login()" style="border-right:1px solid #DDDDDD;">请登录</a></li>
-            		<li class="" style="border-right:1px solid #DDDDDD;"><a href="register.jsp" >立即注册</a></li>
+            		<li class="" style="border-right:1px solid #DDDDDD;"><a href="sign_up.jsp" >立即注册</a></li>
 					<li class="" style="border-right:1px solid #DDDDDD;"><a href="javascript:checkUserLogin()" >个人中心</a></li>
           </ul>
         </div><!--/.nav-collapse -->

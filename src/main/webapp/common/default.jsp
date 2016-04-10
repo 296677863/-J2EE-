@@ -61,47 +61,7 @@
 
 	</div>
 	
-	<h3><a href=""><img style="width: 50px;" alt="" src="images/tool.jpg"></a>常用框架</h3>
-	<div class="row">
-		<div class="col-md-1"></div>
-		  <div class="col-md-3">
-	        <a href=""><img style="width: 100px;" alt="" src=""></a>
-			<a href=""><font style="font-size: 30px;font-weight: bold;">jsp专区</font></a>
-			<font style="font-size: 12px;">帖子总数：111</font>
-			<font style="font-size: 12px;">精华帖子：56</font>
-			<font style="font-size: 12px;">未回复：2</font>
-			<font style="font-size: 12px;">版主：test</font>
-	      </div>
-	    <div class="col-md-1"></div>
-
-		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
-		</div>
-		<div class="col-md-1"></div>
 		
-		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
-		</div>
-		
-
-	</div>
-	
 	<h3> <a href=""><img style="width: 50px;" alt="" src="images/android.png"></a>Android4</h3>
 		<div class="row">
 		<div class="col-md-1"></div>
@@ -142,5 +102,47 @@
 		
 
 	</div>
+	
+	<h3><a href=""><img style="width: 50px;" alt="" src="images/tool.jpg"></a>常用框架</h3>
+	<div class="row">
+		<div class="col-md-1"></div>
+		  <div class="col-md-3">
+	        <a href=""><img style="width: 100px;" alt="" src=""></a>
+			<a href=""><font style="font-size: 30px;font-weight: bold;">jsp专区</font></a>
+			<font style="font-size: 12px;">帖子总数：111</font>
+			<font style="font-size: 12px;">精华帖子：56</font>
+			<font style="font-size: 12px;">未回复：2</font>
+			<font style="font-size: 12px;">版主：test</font>
+	      </div>
+	    <div class="col-md-1"></div>
+
+		<div class="col-md-3">
+			<h2>Heading</h2>
+			<p>Donec id elit non mi porta gravida at eget metus. Fusce
+				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
+				magna mollis euismod. Donec sed odio dui.</p>
+			<p>
+				<a class="btn btn-default" href="#" role="button">View details
+					&raquo;</a>
+			</p>
+		</div>
+		<div class="col-md-1"></div>
+		
+		<div class="col-md-3">
+			<h2>Heading</h2>
+			<p>Donec id elit non mi porta gravida at eget metus. Fusce
+				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
+				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
+				magna mollis euismod. Donec sed odio dui.</p>
+			<p>
+				<a class="btn btn-default" href="#" role="button">View details
+					&raquo;</a>
+			</p>
+		</div>
+		
+
+	</div>
+
 </div>
 
