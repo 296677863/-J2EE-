@@ -1,133 +1,238 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+	String path = request.getContextPath();
+	String basePath = request.getScheme() + "://"
+			+ request.getServerName() + ":" + request.getServerPort()
+			+ path + "/";
+
+	
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
 <html>
 <head>
+<base href="<%=basePath%>">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
-<style type="text/css">
-html{overflow-y:scroll;vertical-align:baseline;}
-body{font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;font-size:12px;color:#fff;height:100%;line-height:1;background:#999}
-*{margin:0;padding:0}
-ul,li{list-style:none}
-h1{font-size:30px;font-weight:700;text-shadow:0 1px 4px rgba(0,0,0,.2)}
-.login-box{width:410px;margin:120px auto 0 auto;text-align:center;padding:30px;background:url(images/mask.png);border-radius:10px;}
-.login-box .name,.login-box .password,.login-box .code,.login-box .remember{font-size:16px;text-shadow:0 1px 2px rgba(0,0,0,.1)}
-.login-box .remember input{box-shadow:none;width:15px;height:15px;margin-top:25px}
-.login-box .remember{padding-left:40px}
-.login-box .remember label{display:inline-block;height:42px;width:70px;line-height:34px;text-align:left}
-.login-box label{display:inline-block;width:100px;text-align:right;vertical-align:middle}
-.login-box #imageCode{width:120px}
-.login-box .codeImg{float:right;margin-top:26px;}
-.login-box img{width:140px;height:42px;border:none}
-input[type=text],input[type=password]{width:270px;height:42px;margin:12.5px auto;padding:0px 15px;border:1px solid rgba(255,255,255,.15);border-radius:6px;color:#fff;letter-spacing:2px;font-size:16px;background:transparent;}
-button{cursor:pointer;width:100%;height:44px;padding:0;background:#ef4300;border:1px solid #ff730e;border-radius:6px;font-weight:700;color:#fff;font-size:24px;letter-spacing:15px;margin-top:10px; text-shadow:0 1px 2px rgba(0,0,0,.1)}
-input:focus{outline:none;box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset,0 2px 7px 0 rgba(0,0,0,.2)}
-button:hover{box-shadow:0 15px 30px 0 rgba(255,255,255,.15) inset,0 2px 7px 0 rgba(0,0,0,.2)}
-.screenbg{position:fixed;bottom:0;left:0;z-index:-999;overflow:hidden;width:100%;height:100%;min-height:100%;}
-.screenbg ul li{display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}
-.screenbg ul a{left:0;top:0;width:100%;height:100%;display:inline-block;margin:0;padding:0;cursor:default;}
-.screenbg a img{vertical-align:middle;display:inline;border:none;display:block;list-style:none;position:fixed;overflow:hidden;top:0;left:0;width:100%;height:100%;z-index:-1000;float:right;}
-.bottom{margin:8px auto 0 auto;width:100%;position:fixed;text-align:center;bottom:0;left:0;overflow:hidden;padding-bottom:8px;color:#ccc;word-spacing:3px;zoom:1;}
-.bottom a{color:#FFF;text-decoration:none;}
-.bottom a:hover{text-decoration:underline;}
-</style>
+<title>欢迎登陆</title>
+<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<script type="text/javascript" src="js/jquery-1.11.1.js"></script>
-<script type="text/javascript">
-$(function(){
-	$(".screenbg ul li").each(function(){
-		$(this).css("opacity","0");
-	});
-	$(".screenbg ul li:first").css("opacity","1");
-	var index = 0;
-	var t;
-	var li = $(".screenbg ul li");	
-	var number = li.size();
-	function change(index){
-		li.css("visibility","visible");
-		li.eq(index).siblings().animate({opacity:0},3000);
-		li.eq(index).animate({opacity:1},3000);
-	}
-	function show(){
-		index = index + 1;
-		if(index<=number-1){
-			change(index);
-		}else{
-			index = 0;
-			change(index);
-		}
-	}
-	t = setInterval(show,8000);
-	//根据窗口宽度生成图片宽度
-	var width = $(window).width();
-	$(".screenbg ul img").css("width",width+"px");
-});
-function loadimage(){
-	document.getElementById("randImage").src = "image.jsp?"+Math.random();
-}
+	<meta content="" name="description" />
 
-function checkForm(){
-	 var nickName=$("#nickName").val();
-	 var password=$("#password").val();
-	 var imageCode=$("#imageCode").val();
-	 if(nickName==""){
-		 $("#error").html("昵称不能为空！");
-		 return false;
-	 }
-	 if(password==""){
-		 $("#error").html("密码不能为空！");
-		 return false;
-	 }
-	 if(imageCode==""){
-		 $("#error").html("验证码不能为空！");
-		 return false;
-	 }
-	 return true;
-}
+	<meta content="" name="author" />
+
+	<!-- BEGIN GLOBAL MANDATORY STYLES -->
+
+	<link href="resources/media/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="resources/media/css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="resources/media/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+
+	<link href="resources/media/css/style-metro.css" rel="stylesheet" type="text/css"/>
+
+	<link href="resources/media/css/style.css" rel="stylesheet" type="text/css"/>
+
+	<link href="resources/media/css/style-responsive.css" rel="stylesheet" type="text/css"/>
+
+	<link href="resources/media/css/default.css" rel="stylesheet" type="text/css" id="style_color"/>
+
+	<link href="resources/media/css/uniform.default.css" rel="stylesheet" type="text/css"/>
+
+	<!-- END GLOBAL MANDATORY STYLES -->
+
+	<!-- BEGIN PAGE LEVEL STYLES -->
+
+	<link href="resources/media/css/login.css" rel="stylesheet" type="text/css"/>
+
+	<!-- END PAGE LEVEL STYLES -->
+
+	<link rel="shortcut icon" href="resources/media/image/favicon.ico" />
+	<script type="text/javascript">
+	if (top != self) {
+		if (top.location != self.location)
+			top.location = self.location;
+	}
 </script>
+
 </head>
-<body>
-<div class="login-box">
-	<h1>java学习交流论坛登录</h1>
-	<form method="post" action="user/login" onsubmit="return checkForm()">
-		<table>
-			<tr class="name">
-				<td><label>昵  称：</label></td>
-				<td><input type="text" id="nickName" name="nickname" tabindex="1" autocomplete="off" /></td>
-			</tr>
-			<tr class="password">
-				<td><label>密  码：</label></td>
-				<td><input type="password" name="password" maxlength="16" id="password" tabindex="2"/></td>
-			</tr>
-			<tr class="code">
-				<td><label>验证码：</label></td>
-				<td>
-					<input  class="text" style="margin-right: 10px;"
-							type=text value="${imageCode }" name="imageCode" id="imageCode"><img
-							onclick="javascript:loadimage();" title="换一张试试" name="randImage"
-							id="randImage" src="image" border="1"
-							align="absmiddle">
-				</td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<button type="submit" tabindex="5">登录</button> &nbsp;&nbsp;&nbsp;&nbsp;
-						<font id="error" style="font-size: 20px;" color="red">${error }</font>
-				</td>
-			</tr>
-		</table>
-	</form>
+<!-- END HEAD -->
+
+<!-- BEGIN BODY -->
+
+<body class="login">
+
+	<!-- BEGIN LOGO -->
+
+	<div class="logo">
+
+		<img src="resources/media/image/logo-big.png" alt="" /> 
+
+	</div>
+
+	<!-- END LOGO -->
+
+	<!-- BEGIN LOGIN -->
+<div class="content">
+		<div id="alertMessage"></div>
+		<!-- BEGIN LOGIN FORM -->
+
+	<form class="form-vertical login-form" action="user/login" method="post">
+			<input name="userKey" type="hidden" id="userKey" value="D1B5CC2FE46C4CC983C073BCA897935608D926CD32992B5900" />
+
+			<h3 class="form-title">用户登录</h3>
+
+			<div class="alert alert-error hide">
+
+				<button class="close" data-dismiss="alert"></button>
+
+				<span>请输入用户名和密码</span>
+
+			</div>
+
+			<div class="control-group">
+
+				<!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+
+				<label class="control-label visible-ie8 visible-ie9">email</label>
+
+				<div class="controls">
+
+					<div class="input-icon left">
+
+						<i class="icon-user"></i>
+
+						<input class="m-wrap placeholder-no-fix" iscookie="true" style="width: 220px" type="text" id="email" value="${email }" placeholder="用户邮箱" name="email"/>
+
+					</div>
+
+				</div>
+
+			</div>
+			<div class="control-group">
+
+				<label class="control-label visible-ie8 visible-ie9">Password</label>
+
+				<div class="controls">
+
+					<div class="input-icon left">
+
+						<i class="icon-lock"></i>
+
+						<input class="m-wrap placeholder-no-fix"  style="width: 220px" type="password" id="password" value="${password }" placeholder="密码" name="password"/>
+
+					</div>
+
+				</div>
+
+			</div>
+	<div class="control-group">
+
+				<label class="control-label visible-ie8 visible-ie9"></label>
+				
+
+				<div class="controls">
+	
+					<div class="input-icon left">
+					
+						<i class="icon-picture"></i>
+						<input class="m-wrap placeholder-no-fix" style="width: 130px" type="text" id="captcha" placeholder="验证码" name="captcha"/>
+						<img alt="" src="resources/Kaptcha.jpg" id="Kaptcha" />
+						
+					</div>
+					
+
+				</div>
+
+			</div>
+		
+			<div class="form-actions">
+
+				<label class="checkbox">
+
+				<input type="checkbox" id="on_off" checked="checked" name="remember"  value="1"/>记住我
+
+				</label>
+
+				<button type="submit" id="but_login" class="btn green pull-right">
+
+				登录 <i class="m-icon-swapright m-icon-white"></i>
+
+				</button>            
+
+			</div>
+
+			
+		</form>
 </div>
 
-<div class="bottom"><a href="javascript:;" target="_blank">关于</a> <span></span><img width="13" height="16" src="images/copy_rignt_24.png" /></div>
+	<!-- END LOGIN -->
 
-<div class="screenbg">
-	<ul>
-		<li><a href="javascript:;"><img src="images/0.jpg"></a></li>
-		<li><a href="javascript:;"><img src="images/1.jpg"></a></li>
-		<li><a href="javascript:;"><img src="images/2.jpg"></a></li>
-	</ul>
-</div>
+	<!-- BEGIN COPYRIGHT -->
+
+	<div class="copyright">
+
+		2013 &copy; Metronic. Admin Dashboard Template.
+
+	</div>
+
+	<!-- END COPYRIGHT -->
+
+	<!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+
+	<!-- BEGIN CORE PLUGINS -->
+	<script src="resources/media/js/jquery-1.10.1.min.js" type="text/javascript"></script>
+
+	<script src="resources/media/js/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+
+	<!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+
+	<script src="resources/media/js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>      
+
+	<script src="resources/media/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!--[if lt IE 9]>
+
+	<script src="resources/media/js/excanvas.min.js"></script>
+
+	<script src="resources/media/js/respond.min.js"></script>  
+
+	<![endif]-->   
+
+	<script src="resources/media/js/jquery.slimscroll.min.js" type="text/javascript"></script>
+
+	<script src="resources/media/js/jquery.blockui.min.js" type="text/javascript"></script>  
+
+	<script src="resources/media/js/jquery.cookie.min.js" type="text/javascript"></script>
+
+	<script src="resources/media/js/jquery.uniform.min.js" type="text/javascript" ></script>
+
+	<!-- END CORE PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL PLUGINS -->
+
+	<script src="resources/media/js/jquery.validate.min.js" type="text/javascript"></script>
+
+	<!-- END PAGE LEVEL PLUGINS -->
+
+	<!-- BEGIN PAGE LEVEL SCRIPTS -->
+
+	<!--  <script src="resources/media/js/app.js" type="text/javascript"></script>-->
+
+	<!-- <script src="resources/media/js/login.js" type="text/javascript"></script>  -->    
+	<script type="text/javascript" src="resources/js/login.js"></script>
+
+	<!-- END PAGE LEVEL SCRIPTS --> 
+
+
+
 </body>
+
+<!-- END BODY -->
+
 </html>
