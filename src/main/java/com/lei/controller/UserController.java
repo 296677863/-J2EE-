@@ -92,7 +92,7 @@ public class UserController {
 		if (currentUser.getType() == 3) {
 			model = new ModelAndView("index");
 		} else {
-			model = new ModelAndView("index");
+			model = new ModelAndView("admin/index");
 		}
 		return model;
 	}

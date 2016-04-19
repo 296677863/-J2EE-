@@ -20,11 +20,11 @@
 
 <div class="container">
 	<!-- Example row of columns -->
-	<h3> <a href=""><img style="width: 50px;" alt="" src="images/java-logo.gif"></a>Java web</h3>
+	<h3> <a href=""><img style="width: 50px;" alt="" src="resources/images/java-logo.gif"></a>Java web</h3>
 	<div class="row">
 		<div class="col-md-1"></div>
 		  <div class="col-md-3">
-	        <a href=""><img style="width: 100px;" alt="" src="images/java-logo.gif"></a>
+	        <a href=""><img style="width: 100px;" alt="" src="resources/images/java-logo.gif"></a>
 			<a href=""><font style="font-size: 30px;font-weight: bold;">jsp专区</font></a>
 			<font style="font-size: 12px;">帖子总数：111</font>
 			<font style="font-size: 12px;">精华帖子：56</font>
@@ -62,7 +62,7 @@
 	</div>
 	
 		
-	<h3> <a href=""><img style="width: 50px;" alt="" src="images/android.png"></a>Android4</h3>
+	<h3> <a href=""><img style="width: 50px;" alt="" src="resources/images/android.png"></a>Android4</h3>
 		<div class="row">
 		<div class="col-md-1"></div>
 		  <div class="col-md-3">
@@ -103,7 +103,7 @@
 
 	</div>
 	
-	<h3><a href=""><img style="width: 50px;" alt="" src="images/tool.jpg"></a>常用框架</h3>
+	<h3><a href=""><img style="width: 50px;" alt="" src="resources/images/tool.jpg"></a>常用框架</h3>
 	<div class="row">
 		<div class="col-md-1"></div>
 		  <div class="col-md-3">

@@ -1,5 +1,8 @@
 package com.lei.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import com.lei.model.Zone;
 
 public interface ZoneMapper {
@@ -14,4 +17,6 @@ public interface ZoneMapper {
     int updateByPrimaryKeySelective(Zone record);
 
     int updateByPrimaryKey(Zone record);
+
+	List<Zone> findZoneList(Map map);
 }

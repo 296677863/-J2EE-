@@ -35,15 +35,31 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
 	<!-- 静态资源处理， css， js， imgs -->
 	<mvc:resources mapping="/resources/**" location="/resources/" />
-
+	
+	<!-- 配置ViewResolver。 可以用多个ViewResolver。 使用order属性排序。 InternalResourceViewResolver放在最后。 -->
 	<bean
-		class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
-		<property name="messageConverters">
+		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+		<property name="order" value="1" />
+		<property name="mediaTypes">
+			<map>
+				<entry key="json" value="application/json" />
+				<entry key="xml" value="application/xml" />
+				<entry key="htm" value="text/html" />
+			</map>
+		</property>
+
+		<property name="defaultViews">
 			<list>
-				<ref bean="mappingJacksonHttpMessageConverter" />
+				<!-- JSON View -->
+				<bean
+					class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+				</bean>
 			</list>
 		</property>
+		<property name="ignoreAcceptHeader" value="true" />
 	</bean>
+
+	
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -64,6 +80,7 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		<property name="maxInMemorySize">
 			<value>4096</value>
 		</property>
+		<property name="resolveLazily" value="true" />
 	</bean>
 
 </beans>

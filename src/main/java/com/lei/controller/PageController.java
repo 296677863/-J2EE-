@@ -38,5 +38,23 @@ public class PageController {
 	public String image(){
 		return "image";
 	}
+	
+	@RequestMapping("layout/north")
+	public String adminNorth(){
+		return "admin/layout/north";
+	}
+	@RequestMapping("layout/south")
+	public String adminSouth(){
+		return "admin/layout/south";
+	}
+	@RequestMapping("layout/center")
+	public String adminCenter(){
+		return "admin/layout/center";
+	}
+	@RequestMapping("layout/portal")
+	public String adminPortal(){
+		return "admin/layout/portal";
+	}
+	
 
 }
