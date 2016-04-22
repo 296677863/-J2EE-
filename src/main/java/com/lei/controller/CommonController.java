@@ -24,20 +24,21 @@ public class CommonController extends BaseUtil{
 	private Logger logger = LoggerFactory.getLogger(CommonController.class);
 	
 	
-	@RequestMapping(value="/findAllFunctionList",method=RequestMethod.POST)
+	@RequestMapping("/findAllFunctionList")
 	public @ResponseBody List<MenuView> findAllFunctionList(){
 		
 		Map<String,Object> map=new HashMap<String,Object>();
 		 //start 由于时间关系做成静态的了
 		List<MenuView> listmenu =new ArrayList<MenuView>();
 		MenuView menuView1=new MenuView("1",null,"系统管理","icon-sys","");
-		MenuView menuView2=new MenuView("2",null,"大板块管理","icon-config","");
-		MenuView menuView3=new MenuView("3",null,"小版块管理","icon-config","");
-		MenuView menuView4=new MenuView("4",null,"帖子管理","icon-config","");
-		MenuView menuView5=new MenuView("5",null,"用户管理","icon-config","");
+		MenuView menuView2=new MenuView("2","9","大板块管理","icon-sys","zone");
+		MenuView menuView3=new MenuView("3","9","小版块管理","icon-sys","section");
+		MenuView menuView4=new MenuView("4","9","帖子管理","icon-sys","topic");
+		MenuView menuView5=new MenuView("5","9","用户管理","icon-sys","user");
 		MenuView menuView6=new MenuView("6","1","修改密码","icon-edit","");
 		MenuView menuView7=new MenuView("7","1","安全退出","icon-end","");
 		MenuView menuView8=new MenuView("8","1","刷新系统缓存","icon-role","");
+		MenuView menuView9=new MenuView("9",null,"常用操作","icon-sys","");
 		listmenu.add(menuView1);
 		listmenu.add(menuView2);
 		listmenu.add(menuView3);
@@ -46,6 +47,7 @@ public class CommonController extends BaseUtil{
 		listmenu.add(menuView6);
 		listmenu.add(menuView7);
 		listmenu.add(menuView8);
+		listmenu.add(menuView9);
 		//end
 		List parentList=new ArrayList<MenuView>();
 		for(MenuView object:listmenu){

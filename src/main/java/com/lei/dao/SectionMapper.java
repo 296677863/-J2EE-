@@ -1,5 +1,8 @@
 package com.lei.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import com.lei.model.Section;
 
 public interface SectionMapper {
@@ -14,4 +17,13 @@ public interface SectionMapper {
     int updateByPrimaryKeySelective(Section record);
 
     int updateByPrimaryKey(Section record);
+    
+    public List<Section> findSectionList(Map map) ;
+    
+    public Long getSectionCount(Section s_section);
+    
+    
+    
+    
+    
 }

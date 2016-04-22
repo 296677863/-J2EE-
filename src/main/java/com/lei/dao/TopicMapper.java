@@ -1,5 +1,8 @@
 package com.lei.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import com.lei.model.Topic;
 
 public interface TopicMapper {
@@ -16,4 +19,25 @@ public interface TopicMapper {
     int updateByPrimaryKeyWithBLOBs(Topic record);
 
     int updateByPrimaryKey(Topic record);
+    
+    public List<Topic> findTopicList(Map map);
+    
+    public Long getTopicCount(Topic s_topic);
+    
+    public List<Topic> findZdTopicListBySectionId(Map map);
+    
+    public List<Topic> findPtTopicListBySectionId(Map map);
+    
+    public Long getNoReplyTopicCount(Topic s_topic);
+    
+    public List<Topic> findGoodTopicListBySectionId(Map map);
+    
+    public List<Topic> findNotGoodTopicListBySectionId(Map map);
+    
+    public Long getPtTopicCountBySectionId(int sectionId);
+    
+
+    
+    
+    
 }

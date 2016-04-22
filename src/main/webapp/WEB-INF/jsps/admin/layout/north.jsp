@@ -49,7 +49,7 @@
 		});
 	}
 </script>
-<div style="position: absolute; right: 0px; bottom: 0px; ">当前用户:<shiro:principal/>
+<div style="position: absolute; right: 0px; bottom: 0px; ">当前用户:${currentUser.nickname }
 	<a href="javascript:void(0);" class="easyui-menubutton" menu="#layout_north_kzmbMenu" iconCls="icon-help">控制面板</a> 
 	<a href="javascript:void(0);" class="easyui-menubutton" menu="#layout_north_zxMenu" iconCls="icon-logout">注销</a>
 </div>

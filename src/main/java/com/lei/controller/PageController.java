@@ -56,5 +56,22 @@ public class PageController {
 		return "admin/layout/portal";
 	}
 	
+	@RequestMapping("section")
+	public String section(){
+		return "admin/section";
+	}
+	@RequestMapping("topic")
+	public String topic(){
+		return "admin/topic";
+	}
+	@RequestMapping("user")
+	public String user(){
+		return "admin/user";
+	}
+	@RequestMapping("zone")
+	public String zone(){
+		return "admin/zone";
+	}
+	
 
 }

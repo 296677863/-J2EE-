@@ -33,7 +33,10 @@ public class ZoneController {
 
 
 	@RequestMapping("zone_list")
-	public @ResponseBody List<Zone> list(String page,String rows,Zone s_zone){
+	public @ResponseBody Map<String,Object> list(String page,String rows,Zone s_zone){
+		Map<String,Object> mapReturn=new HashMap<String, Object>();
+		int total=11;
+		mapReturn.put("total", total);
 		if (StringUtils.isEmpty(page)) {
 			page="1";
 		}
@@ -46,7 +49,8 @@ public class ZoneController {
 		map.put("s_zone",s_zone);
 		map.put("pageUtil",pageUtil);
 		List<Zone> zoneList=zoneService.findZoneList(map);
-		return zoneList;
+		mapReturn.put("rows", zoneList);
+		return mapReturn;
 	}
 	
 

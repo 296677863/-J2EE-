@@ -130,4 +130,37 @@
       title = #{title,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="findLastReplyByTopicId" parameterType="java.lang.Integer" resultType="com.lei.model.Reply">
+  	select * from t_reply 
+  	<trim prefix="where" prefixOverrides="and|or">
+  		<if test="topicId>0">
+  		topicId =#{topicId}
+  		</if>
+  	</trim>
+  	order by publicTime desc
+  
+  </select>
+  
+  <select id="getReplyCountByTopicId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+  	select count(*) from t_reply
+  	<trim prefix="where" prefixOverrides="and|or">
+  		<if test="topicId>0">
+  			topicId =#{topicId}
+  		</if>
+  	</trim>
+  </select>
+  
+  <select id="findReplyListByTopicId" parameterType="Map" resultType="com.lei.model.Reply">
+  	select *　from t_reply
+  	<trim prefix="where" prefixOverrides="and|or">
+  		<if test="topicId>0">
+  			topicId =#{topicId}
+  		</if>
+  	</trim>
+  	limit  #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+  
+  
 </mapper>

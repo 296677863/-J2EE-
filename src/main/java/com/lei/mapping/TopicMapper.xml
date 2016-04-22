@@ -156,4 +156,163 @@
       top = #{top,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <select id="findTopicList" resultType="com.lei.model.Topic" parameterType="Map">
+  	select * from t_topic 
+  	<trim prefix="where" prefixOverrides="and|or">
+  			<if test="topic.title!=null and topic.title!=''">
+  			   title like concat('%',#{topic.title},'%')
+  			</if>
+  			<if test="topic.content!=null and topic.content!=''">
+  			   content like concat('%',#{topic.content},'%')
+  			</if>
+  			<if test="section.masterId!=null and section.masterId!=''">
+  			   masterId=#{section.masterId}
+  			</if>
+  			
+  			<if test="section.publishTime!=null and section.publishTime!=''">
+  			   publishTime=#{section.publishTime}
+  			</if>
+  			<if test="section.modifyTime!=null and section.modifyTime!=''">
+  			   modifyTime=#{section.modifyTime}
+  			</if>
+  			
+  			<if test="section.sectionId!=null and section.sectionId!=''">
+  			   sectionId=#{section.sectionId}
+  			</if>
+  			
+  			<if test="section.top!=2">
+  			   top=#{section.top}
+  			</if>
+  			
+  			<if test="section.good!=2">
+  			   good=#{section.good}
+  			</if>
+  			
+  			
+  	   </trim>
+  		limit #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+  <select id="getTopicCount" resultType="java.lang.Integer" parameterType="com.lei.model.Topic">
+   select count(*) from t_topic
+   
+    	<trim prefix="where" prefixOverrides="and|or">
+  			<if test="title!=null and title!=''">
+  			   title like concat('%',#{title},'%')
+  			</if>
+  			<if test="tcontent!=null and content!=''">
+  			   content like concat('%',#{tcontent},'%')
+  			</if>
+  			<if test="smasterId!=null and masterId!=''">
+  			   masterId=#{masterId}
+  			</if>
+  			
+  			<if test="spublishTime!=null and publishTime!=''">
+  			   publishTime=#{publishTime}
+  			</if>
+  			<if test="modifyTime!=null and modifyTime!=''">
+  			   modifyTime=#{modifyTime}
+  			</if>
+  			
+  			<if test="sectionId!=null and sectionId!=''">
+  			   sectionId=#{sectionId}
+  			</if>
+  			
+  			<if test="top!=2">
+  			   top=#{top}
+  			</if>
+  			
+  			<if test="good!=2">
+  			   good=#{good}
+  			</if>
+  	   </trim>
+  
+  </select>
+  
+  <select id="findZdTopicListBySectionId" resultMap="ResultMapWithBLOBs" parameterType="Map" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_topic
+    <trim prefix="where" prefixOverrides="and|or">
+	    <if test="sectionId>0">
+	  		 sectionId=#{sectionId>0}
+	  	</if>
+	  	top=1
+    </trim>
+    limit  #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+    <select id="findPtTopicListBySectionId" resultMap="ResultMapWithBLOBs" parameterType="Map" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_topic
+    <trim prefix="where" prefixOverrides="and|or">
+	    <if test="sectionId>0">
+	  		 sectionId=#{sectionId>0}
+	  	</if>
+	  	top=0 order by modifyTime desc
+    </trim>
+    limit  #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+  <select id="getNoReplyTopicCount" resultType="java.lang.Integer" parameterType="com.lei.model.Topic" >
+    select count(*)
+   
+    from t_topic where id not in (select r.topicId from t_reply r)
+  
+	    <if test="sectionId>0">
+	  		and sectionId=#{sectionId>0}
+	  	</if>
+    
+  </select>
+  
+  
+    <select id="findGoodTopicListBySectionId" resultMap="ResultMapWithBLOBs" parameterType="Map" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_topic
+    <trim prefix="where" prefixOverrides="and|or">
+	    <if test="sectionId>0">
+	  		 sectionId=#{sectionId>0}
+	  	</if>
+	  	good=1
+    </trim>
+    limit  #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+  <select id="findNotGoodTopicListBySectionId" resultMap="ResultMapWithBLOBs" parameterType="Map" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from t_topic
+    <trim prefix="where" prefixOverrides="and|or">
+	    <if test="sectionId>0">
+	  		 sectionId=#{sectionId>0}
+	  	</if>
+	  	good=0
+    </trim>
+    limit  #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+    <select id="getPtTopicCountBySectionId" resultType="java.lang.Integer" parameterType="java.lang.Integer" >
+    select count(*)
+    from t_topic
+    <trim prefix="where" prefixOverrides="and|or">
+	    <if test="sectionId>0">
+	  		 sectionId=#{sectionId>0}
+	  	</if>
+	  	top=0
+    </trim>
+    limit  #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+  
 </mapper>

@@ -90,4 +90,40 @@
       logo = #{logo,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  
+  <select id="findSectionList" resultType="com.lei.model.Section" parameterType="Map">
+  	select * form t_section 
+  		<trim prefix="where" prefixOverrides="and|or">
+  			<if test="section.name!=null and section.name!=''">
+  			   name like concat('%',#{section.name},'%')
+  			</if>
+  			<if test="section.zoneid!=null and section.zoneid!=''">
+  			   zoneId=#{section.zoneId}
+  			</if>
+  			<if test="section.masterId!=null and section.masterId!=''">
+  			   masterId=#{section.masterId}
+  			</if>
+  	   </trim>
+  		limit #{pageUtil.start},#{pageUtil.rows}
+  </select>
+  
+    <select id="getSectionCount" parameterType="com.lei.model.Section" resultType="java.lang.Integer">
+  	select count(*) from t_section
+  	<trim prefix="where" prefixOverrides="and|or">
+  			<if test="section.name!=null and section.name!=''">
+  			   name like concat('%',#{section.name},'%')
+  			</if>
+  			<if test="section.zoneid!=null and section.zoneid!=''">
+  			   zoneId=#{section.zoneId}
+  			</if>
+  			<if test="section.masterId!=null and section.masterId!=''">
+  			   masterId=#{section.masterId}
+  			</if>
+  	   </trim>
+  </select>
+  
+  
+  
+  
 </mapper>
