@@ -20,11 +20,11 @@
 					async : false,
 					cache : false,
 					type : "POST",
-					url : "systemAction!logout.action",
+					url : "user/login_out",
 					error : function() {
 					},
 					success : function(json) {
-						location.replace("login.jsp");
+						location.replace("login");
 					}
 				});
 			}

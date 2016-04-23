@@ -3,12 +3,12 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
- <link rel="stylesheet" type="text/css" href="http://www.java1234.com/jquery-easyui-1.3.3/themes/default/easyui.css">
- <link rel="stylesheet" type="text/css" href="http://www.java1234.com/jquery-easyui-1.3.3/themes/icon.css">
- <link rel="stylesheet" type="text/css" href="http://www.java1234.com/jquery-easyui-1.3.3/demo/demo.css">
- <script type="text/javascript" src="http://www.java1234.com/jquery-easyui-1.3.3/jquery.min.js"></script>
- <script type="text/javascript" src="http://www.java1234.com/jquery-easyui-1.3.3/jquery.easyui.min.js"></script>
- <script type="text/javascript" src="http://www.java1234.com/jquery-easyui-1.3.3/locale/easyui-lang-zh_CN.js"></script>
+ <link rel="stylesheet" type="text/css" href="resources/jquery-easyui/themes/default/easyui.css">
+ <link rel="stylesheet" type="text/css" href="resources/jquery-easyui/themes/icon.css">
+ <link rel="stylesheet" type="text/css" href="resources/jquery-easyui/css/demo.css">
+ <script type="text/javascript" src="resources/jquery-easyui/js/jquery-1.7.2.min.js"></script>
+ <script type="text/javascript" src="resources/jquery-easyui/js/jquery.easyui.min.js"></script>
+ <script type="text/javascript" src="resources/jquery-easyui/js/easyui-lang-zh_CN.js"></script>
 
 
 

@@ -1,5 +1,6 @@
 package com.lei.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +14,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,7 +22,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.alibaba.druid.util.StringUtils;
-import com.lei.model.Section;
 import com.lei.model.User;
 import com.lei.service.IUserService;
 import com.lei.util.PageUtil;
@@ -38,16 +39,25 @@ public class UserController {
 		this.userService = userService;
 	}
 
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	@RequestMapping("/login")
 	public ModelAndView login(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 			@ModelAttribute User user, String captcha, String remember) {
-		ModelAndView model = null;
+		ModelAndView model=null;
+		User currentUser=(User) session.getAttribute("currentUser");
+		if(currentUser!=null){
+			if (currentUser.getType() == 3) {
+				model = new ModelAndView("index");
+			} else {
+				model = new ModelAndView("admin/index");
+			}
+			return model;
+		}
 		String error = "";
 		logger.debug("User中的值：" + user.getEmail() + "," + user.getPassword());
 		logger.debug("验证码：" + captcha);
 		logger.debug(remember);
 		String sRand = (String) session.getAttribute(com.google.code.kaptcha.Constants.KAPTCHA_SESSION_KEY);
-		User currentUser = userService.login(user);
+		currentUser = userService.login(user);
 		if (!captcha.equals(sRand)) {
 			error = "验证码错误！";
 			session.setAttribute("error", error);
@@ -124,6 +134,23 @@ public class UserController {
 		List<User> userList=userService.findUserList(map);
 		mapReturn.put("rows", userList);
 		return mapReturn;
+	}
+	@RequestMapping("login_out")
+	public  @ResponseBody String login_out(HttpServletRequest request,HttpServletResponse response){
+	
+		HttpSession session=request.getSession();
+		try {
+			response.setHeader("Pragma","No-cache");
+			response.setHeader("Cache-Control","no-cache");
+			response.setDateHeader("Expires", 0);
+			response.flushBuffer();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		session.invalidate();
+		
+		return "login";
+		
 	}
 
 }
