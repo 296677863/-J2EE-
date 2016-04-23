@@ -9,6 +9,8 @@
 		<param-value>classpath:spring.xml,classpath:spring-mybatis.xml</param-value>
 	</context-param>
 	
+	
+	
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -132,6 +134,8 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
+	 
+	
 	<servlet>
 		<description>spring mvc servlet</description>
 		<servlet-name>springmvc</servlet-name>
@@ -149,7 +153,10 @@
 	</servlet-mapping>
 	
 	
-	
+	<listener>
+   		 <listener-class>com.lei.listener.InitListener</listener-class>
+  	</listener>
+  	
 	
 
 </web-app>
