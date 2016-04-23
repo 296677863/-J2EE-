@@ -1,5 +1,8 @@
 package com.lei.service;
 
+import java.util.List;
+import java.util.Map;
+
 import com.lei.model.User;
  
 /**
@@ -12,5 +15,7 @@ import com.lei.model.User;
 public interface IUserService {
 	public int insert(User user);
 	public User login(User user);
+	public List<User> findUserList(Map<String, Object> map);
+	public int getCountUser(User user);
 
 }

@@ -41,7 +41,7 @@ public class ZoneController {
 			page="1";
 		}
 		if (StringUtils.isEmpty(rows)) {
-			rows="6";
+			rows="10";
 		}
 		PageUtil pageUtil =new PageUtil(Integer.parseInt(page),Integer.parseInt(rows));
 		Map<String,Object>map=new HashMap<String,Object>();

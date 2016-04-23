@@ -19,26 +19,26 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div style="margin:10px 0;"></div>
 <table id="dg" class="easyui-datagrid" title="主题列表" style="width:900px;height:600px"
-       data-options="rownumbers:true,singleSelect:true,pagination:true,url:'/wxgx/fileOperate/list?dir=css',toolbar:'#tb'">
+       data-options="rownumbers:true,singleSelect:true,pagination:true,url:'topic_list',toolbar:'#tb'">
     <thead>
     <tr>
         <th data-options="field:'ck',checkbox:true"></th>
-        <th data-options="field:'itemid',width:80">编号</th>
-        <th data-options="field:'name',width:100">帖子标题</th>
-        <th data-options="field:'url',width:100">发帖人</th>
-        <th data-options="field:'url',width:100">所属小版块</th>
-        <th data-options="field:'url',width:100">发帖时间</th>
-        <th data-options="field:'url',width:100">最后修改时间</th>
-        <th data-options="field:'url',width:100">是否置顶</th>
-        <th data-options="field:'url',width:100">是否精华</th>
-        <th data-options="field:'url',width:100">操作</th>
+        <th data-options="field:'id',width:80">编号</th>
+        <th data-options="field:'title',width:100">帖子标题</th>
+        <th data-options="field:'userid',width:100">发帖人</th>
+        <th data-options="field:'sectionid',width:100">所属小版块</th>
+        <th data-options="field:'publishtime',width:100">发帖时间</th>
+        <th data-options="field:'modifytime',width:100">最后修改时间</th>
+        <th data-options="field:'top',width:100">是否置顶</th>
+        <th data-options="field:'good',width:100">是否精华</th>
     </tr>
     </thead>
 </table>
 
 <div id="tb" style="padding:5px;height:auto">
     <div style="margin-bottom:5px">
-
+		<a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
+		<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
         <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true">批量删除</a>
     </div>
     <div>

@@ -30,11 +30,11 @@ public class TopicServiceImpl implements ITopicService{
 	}
 	@Override
 	public List<Topic> findTopicList(Map map) {
-		return null;
+		return topicMapper.findTopicList(map);
 	}
 	@Override
 	public Long getTopicCount(Topic s_topic) {
-		return null;
+		return topicMapper.getTopicCount(s_topic);
 	}
 	@Override
 	public Topic findTopicById(int topicId) {

@@ -93,16 +93,16 @@
   
   
   <select id="findSectionList" resultType="com.lei.model.Section" parameterType="Map">
-  	select * form t_section 
+  	select * from t_section 
   		<trim prefix="where" prefixOverrides="and|or">
   			<if test="section.name!=null and section.name!=''">
   			   name like concat('%',#{section.name},'%')
   			</if>
   			<if test="section.zoneid!=null and section.zoneid!=''">
-  			   zoneId=#{section.zoneId}
+  			   zoneId=#{section.zoneid}
   			</if>
-  			<if test="section.masterId!=null and section.masterId!=''">
-  			   masterId=#{section.masterId}
+  			<if test="section.masterid!=null and section.masterid!=''">
+  			   masterId=#{section.masterid}
   			</if>
   	   </trim>
   		limit #{pageUtil.start},#{pageUtil.rows}

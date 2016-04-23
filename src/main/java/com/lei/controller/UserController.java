@@ -1,5 +1,9 @@
 package com.lei.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,10 +16,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.alibaba.druid.util.StringUtils;
+import com.lei.model.Section;
 import com.lei.model.User;
 import com.lei.service.IUserService;
+import com.lei.util.PageUtil;
 
 @Controller
 @RequestMapping("/user")
@@ -95,6 +103,27 @@ public class UserController {
 			model = new ModelAndView("admin/index");
 		}
 		return model;
+	}
+	
+	@RequestMapping("user_list")
+	public @ResponseBody Map<String,Object> list(String page,String rows,User user){
+		Map<String,Object> mapReturn=new HashMap<String, Object>();
+		int total=userService.getCountUser(user);
+		mapReturn.put("total", total);
+		if (StringUtils.isEmpty(page)) {
+			page="1";
+		}
+		if (StringUtils.isEmpty(rows)) {
+			rows="10";
+		}
+		PageUtil pageUtil =new PageUtil(Integer.parseInt(page),Integer.parseInt(rows));
+		Map<String,Object>map=new HashMap<String,Object>();
+		
+		map.put("user",user);
+		map.put("pageUtil",pageUtil);
+		List<User> userList=userService.findUserList(map);
+		mapReturn.put("rows", userList);
+		return mapReturn;
 	}
 
 }

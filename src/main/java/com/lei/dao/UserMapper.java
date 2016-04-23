@@ -1,5 +1,8 @@
 package com.lei.dao;
 
+import java.util.List;
+import java.util.Map;
+
 import com.lei.model.User;
 
 public interface UserMapper {
@@ -16,4 +19,8 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
 	User login(User user);
+
+	List<User> findUserList(Map<String, Object> map);
+
+	int getCountUser(User user);
 }

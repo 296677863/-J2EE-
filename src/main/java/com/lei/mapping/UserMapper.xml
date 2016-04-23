@@ -25,6 +25,23 @@
     from t_user
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="findUserList" resultType="com.lei.model.User" parameterType="Map">
+  		select * from t_user
+  	<trim prefix="where" prefixOverrides="and|or">
+  			<if test="user.nickname!=null and user.nickname!=''">
+  			   title like concat('%',#{user.nickname},'%')
+  			</if>
+  	   </trim>
+  		limit #{pageUtil.start},#{pageUtil.rows}
+  </select>
+    <select id="getCountUser" resultType="java.lang.Integer" parameterType="com.lei.model.User">
+  		select count(*) from t_user
+  	<trim prefix="where" prefixOverrides="and|or">
+  			<if test="nickname!=null and nickname!=''">
+  			   title like concat('%',#{nickname},'%')
+  			</if>
+  	   </trim>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from t_user
     where id = #{id,jdbcType=INTEGER}

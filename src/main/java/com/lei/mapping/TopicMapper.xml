@@ -166,64 +166,61 @@
   			<if test="topic.content!=null and topic.content!=''">
   			   content like concat('%',#{topic.content},'%')
   			</if>
-  			<if test="section.masterId!=null and section.masterId!=''">
-  			   masterId=#{section.masterId}
+  			<if test="topic.userid!=null and topic.userid!=''">
+  			   userId=#{topic.userid}
   			</if>
   			
-  			<if test="section.publishTime!=null and section.publishTime!=''">
-  			   publishTime=#{section.publishTime}
+  			<if test="topic.publishtime!=null and topic.publishtime!=''">
+  			   publishTime=#{topic.publishtime}
   			</if>
-  			<if test="section.modifyTime!=null and section.modifyTime!=''">
-  			   modifyTime=#{section.modifyTime}
-  			</if>
-  			
-  			<if test="section.sectionId!=null and section.sectionId!=''">
-  			   sectionId=#{section.sectionId}
+  			<if test="topic.modifytime!=null and topic.modifytime!=''">
+  			   modifyTime=#{topic.modifytime}
   			</if>
   			
-  			<if test="section.top!=2">
-  			   top=#{section.top}
+  			<if test="topic.sectionid!=null and topic.sectionid!=''">
+  			   sectionId=#{topic.sectionid}
   			</if>
   			
-  			<if test="section.good!=2">
-  			   good=#{section.good}
+  			<if test="topic.top!=2 and topic.top!=null">
+  			   top=#{topic.top}
   			</if>
   			
-  			
+  			<if test="topic.good!=2 and topic.good!=null">
+  			   good=#{topic.good}
+  			</if>
   	   </trim>
   		limit #{pageUtil.start},#{pageUtil.rows}
   </select>
   
-  <select id="getTopicCount" resultType="java.lang.Integer" parameterType="com.lei.model.Topic">
+  <select id="getTopicCount" resultType="java.lang.Long" parameterType="com.lei.model.Topic">
    select count(*) from t_topic
-   
     	<trim prefix="where" prefixOverrides="and|or">
   			<if test="title!=null and title!=''">
   			   title like concat('%',#{title},'%')
   			</if>
-  			<if test="tcontent!=null and content!=''">
-  			   content like concat('%',#{tcontent},'%')
+  			<if test="content!=null and content!=''">
+  			   content like concat('%',#{content},'%')
   			</if>
-  			<if test="smasterId!=null and masterId!=''">
-  			   masterId=#{masterId}
-  			</if>
-  			
-  			<if test="spublishTime!=null and publishTime!=''">
-  			   publishTime=#{publishTime}
-  			</if>
-  			<if test="modifyTime!=null and modifyTime!=''">
-  			   modifyTime=#{modifyTime}
+  			<if test="userid!=null and userrid!=''">
+  			   userId=#{userid}
   			</if>
   			
-  			<if test="sectionId!=null and sectionId!=''">
-  			   sectionId=#{sectionId}
+  			<if test="publishtime!=null and publishtime!=''">
+  			   publishTime=#{publishtime}
+  			</if>
+  			<if test="modifytime!=null and modifytime!=''">
+  			   modifyTime=#{modifytime}
   			</if>
   			
-  			<if test="top!=2">
+  			<if test="sectionid!=null and sectionid!=''">
+  			   sectionId=#{sectionid}
+  			</if>
+  			
+  			<if test="top!=2 and top!=null">
   			   top=#{top}
   			</if>
   			
-  			<if test="good!=2">
+  			<if test="good!=2 and good!=null">
   			   good=#{good}
   			</if>
   	   </trim>
