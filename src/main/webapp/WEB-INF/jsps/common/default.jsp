@@ -12,137 +12,131 @@
 			Microsystems公司推出的Java面向对象程序设计语言（以下简称Java语言）和Java平台的总称。由James
 			Gosling和同事们共同研发，并在1995年正式推出。</p>
 		<p>
-			<a class="btn btn-primary btn-lg" href="http://www.java.com/zh_CN/about/" role="button">Learn
-				more &raquo;</a>
+			<a class="btn btn-primary btn-lg"
+				href="http://www.java.com/zh_CN/about/" role="button">Learn more
+				&raquo;</a>
 		</p>
 	</div>
 </div>
 
 <div class="container">
 	<!-- Example row of columns -->
-	<h3> <a href=""><img style="width: 50px;" alt="" src="resources/images/java-logo.gif"></a>Java web</h3>
+	
+	<h3>
+		<a href=""><img style="width: 50px;" alt=""
+			src="resources/images/java-logo.gif"></a>Java web
+	</h3>
 	<div class="row">
-		<div class="col-md-1"></div>
-		  <div class="col-md-3">
-	        <a href=""><img style="width: 100px;" alt="" src="resources/images/java-logo.gif"></a>
-			<a href=""><font style="font-size: 30px;font-weight: bold;">jsp专区</font></a>
-			<font style="font-size: 12px;">帖子总数：111</font>
-			<font style="font-size: 12px;">精华帖子：56</font>
-			<font style="font-size: 12px;">未回复：2</font>
-			<font style="font-size: 12px;">版主：test</font>
-	      </div>
-	    <div class="col-md-1"></div>
+	<c:forEach items="${sectionList1 }" var="section">
+		<div class="col-md-1">
+		</div>
+		<div class="col-md-3">
+			<table cellspacing="0" cellpadding="0" class="fl_tb">
+				<tbody>
+					<tr>
+						<td class="fl_g" width="49.9%">
+							<div class="fl_icn_g">
+								<a href="forum-plugin-1.html"><img
+									src="${section.logo }" alt=""><font
+									style="font-size: 20px">${section.name }</font></a>
+							</div>
+							<dl>
+								<dt></dt>
+								<dd>
+									<em>帖子总数: <span title="${sectionTopicCount.get(section) }">${sectionTopicCount.get(section) }</span></em>, <em>精华帖子:
+										<span title="${sectionGoodTopicCount.get(section) }">${sectionGoodTopicCount.get(section) }</span>
+									</em>
+								</dd>
+								<dd>
+									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
+										title="${section.masterid }">${section.masterid }</span></em>
+								</dd>
+							</dl>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</c:forEach>
+	</div>
 
-		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
-		</div>
+
+	<h3>
+		<a href=""><img style="width: 50px;" alt=""
+			src="resources/images/android.png"></a>Android4
+	</h3>
+	<div class="row">
+		<c:forEach items="${sectionList2 }" var="section">
 		<div class="col-md-1"></div>
-		
 		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
+			<table cellspacing="0" cellpadding="0" class="fl_tb">
+				<tbody>
+					<tr>
+						<td class="fl_g" width="49.9%">
+							<div class="fl_icn_g">
+								<a href="forum-plugin-1.html"><img
+									src="${section.logo }" alt=""><font
+									style="font-size: 20px">${section.name }</font></a>
+							</div>
+							<dl>
+								<dt></dt>
+								<dd>
+									<em>帖子总数: <span title="${sectionTopicCount.get(section) }">${sectionTopicCount.get(section) }</span></em>, <em>精华帖子:
+										<span title="${sectionGoodTopicCount.get(section) }">${sectionGoodTopicCount.get(section) }</span>
+									</em>
+								</dd>
+								<dd>
+									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
+										title="${section.masterid }">${section.masterid }</span></em>
+								</dd>
+							</dl>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		
+	</c:forEach>
 
 	</div>
-	
-		
-	<h3> <a href=""><img style="width: 50px;" alt="" src="resources/images/android.png"></a>Android4</h3>
-		<div class="row">
-		<div class="col-md-1"></div>
-		  <div class="col-md-3">
-	        <a href=""><img style="width: 100px;" alt="" src=""></a>
-			<a href=""><font style="font-size: 30px;font-weight: bold;">jsp专区</font></a>
-			<font style="font-size: 12px;">帖子总数：111</font>
-			<font style="font-size: 12px;">精华帖子：56</font>
-			<font style="font-size: 12px;">未回复：2</font>
-			<font style="font-size: 12px;">版主：test</font>
-	      </div>
-	    <div class="col-md-1"></div>
 
-		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
-		</div>
-		<div class="col-md-1"></div>
-		
-		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
-		</div>
-		
-
-	</div>
-	
-	<h3><a href=""><img style="width: 50px;" alt="" src="resources/images/tool.jpg"></a>常用框架</h3>
+	<h3>
+		<a href=""><img style="width: 50px;" alt=""
+			src="resources/images/tool.jpg"></a>常用框架
+	</h3>
 	<div class="row">
+		<c:forEach items="${sectionList3 }" var="section">
 		<div class="col-md-1"></div>
-		  <div class="col-md-3">
-	        <a href=""><img style="width: 100px;" alt="" src=""></a>
-			<a href=""><font style="font-size: 30px;font-weight: bold;">jsp专区</font></a>
-			<font style="font-size: 12px;">帖子总数：111</font>
-			<font style="font-size: 12px;">精华帖子：56</font>
-			<font style="font-size: 12px;">未回复：2</font>
-			<font style="font-size: 12px;">版主：test</font>
-	      </div>
-	    <div class="col-md-1"></div>
-
 		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
+			<table cellspacing="0" cellpadding="0" class="fl_tb">
+				<tbody>
+					<tr>
+						<td class="fl_g" width="49.9%">
+							<div class="fl_icn_g">
+								<a href="forum-plugin-1.html"><img
+									src="${section.logo }" alt=""><font
+									style="font-size: 20px">${section.name }</font></a>
+							</div>
+							<dl>
+								<dt></dt>
+								<dd>
+									<em>帖子总数: <span title="${sectionTopicCount.get(section) }">${sectionTopicCount.get(section) }</span></em>, <em>精华帖子:
+										<span title="${sectionGoodTopicCount.get(section) }">${sectionGoodTopicCount.get(section) }</span>
+									</em>
+								</dd>
+								<dd>
+									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
+										title="${section.masterid }">${section.masterid }</span></em>
+								</dd>
+							</dl>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
-		<div class="col-md-1"></div>
-		
-		<div class="col-md-3">
-			<h2>Heading</h2>
-			<p>Donec id elit non mi porta gravida at eget metus. Fusce
-				dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-				ut fermentum massa justo sit amet risus. Etiam porta sem malesuada
-				magna mollis euismod. Donec sed odio dui.</p>
-			<p>
-				<a class="btn btn-default" href="#" role="button">View details
-					&raquo;</a>
-			</p>
-		</div>
-		
+	</c:forEach>
 
 	</div>
 
 </div>
+
 
