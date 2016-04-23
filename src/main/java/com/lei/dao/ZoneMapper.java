@@ -19,4 +19,6 @@ public interface ZoneMapper {
     int updateByPrimaryKey(Zone record);
 
 	List<Zone> findZoneList(Map map);
+
+	List<Zone> findAllZoneList();
 }

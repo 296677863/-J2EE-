@@ -35,4 +35,10 @@ public class ZoneServiceImpl implements IZoneService {
 		return zoneMapper.findZoneList(map);
 	}
 
+
+	@Override
+	public List<Zone> findAllZoneList() {
+		return zoneMapper.findAllZoneList();
+	}
+
 }

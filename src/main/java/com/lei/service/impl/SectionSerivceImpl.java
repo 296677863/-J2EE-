@@ -41,6 +41,10 @@ public class SectionSerivceImpl implements ISectionService {
 	public Section findSectionById(int sectionId) {
 		return sectionMapper.selectByPrimaryKey(sectionId);
 	}
+	@Override
+	public List<Section> selectByZoneId(int i) {
+		return sectionMapper.selectByZoneId(i);
+	}
 	
 
 }

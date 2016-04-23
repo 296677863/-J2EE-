@@ -16,4 +16,6 @@ public interface ISectionService {
 	
 	public Section findSectionById(int sectionId);
 
+	public List<Section> selectByZoneId(int i);
+
 }

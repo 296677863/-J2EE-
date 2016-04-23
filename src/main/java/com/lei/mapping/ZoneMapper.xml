@@ -79,4 +79,7 @@
   		limit #{pageUtil.start},#{pageUtil.rows}
   
   </select>
+   <select id="findAllZoneList" resultType="com.lei.model.Zone">
+  	select * from t_zone 
+  </select>
 </mapper>

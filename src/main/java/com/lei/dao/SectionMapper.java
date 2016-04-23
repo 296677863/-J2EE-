@@ -21,6 +21,8 @@ public interface SectionMapper {
     public List<Section> findSectionList(Map map) ;
     
     public Long getSectionCount(Section s_section);
+
+	List<Section> selectByZoneId(int zoneid);
     
     
     

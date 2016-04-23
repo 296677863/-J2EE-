@@ -10,4 +10,6 @@ public interface IZoneService {
 
 	List<Zone> findZoneList(Map<String, Object> map);
 
+	List<Zone> findAllZoneList();
+
 }
