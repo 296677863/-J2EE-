@@ -3,6 +3,7 @@ package com.lei.service;
 import java.util.List;
 import java.util.Map;
 
+import com.lei.model.Reply;
 import com.lei.model.Topic;
 
 public interface ITopicService {
@@ -29,6 +30,9 @@ public interface ITopicService {
 	public List<Topic> findNotGoodTopicListBySectionId(Map map);
 	
 	public Long getPtTopicCountBySectionId(int sectionId) ;
+
+
+	public List<Reply> getReplyTopicList(Topic s_topic);
 	
 
 }

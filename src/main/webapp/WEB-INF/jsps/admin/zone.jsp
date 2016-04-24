@@ -11,20 +11,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <script type="text/javascript" src="resources/jquery-easyui/js/easyui-lang-zh_CN.js"></script>
 
 
-<h2>大板块管理</h2>
+<h2>域管理</h2>
 <div class="demo-info">
     <div class="demo-tip icon-tip"></div>
     <div></div>
 </div>
 <div style="margin:10px 0;"></div>
-<table id="dg" class="easyui-datagrid" title="大板块列表" style="width:900px;height:600px"
+<table id="dg" class="easyui-datagrid" title="域列表" style="width:900px;height:600px"
        data-options="rownumbers:true,singleSelect:true,pagination:true,url:'zone_list',toolbar:toolbar">
     <thead>
     <tr>
         <th data-options="field:'ck',checkbox:true"></th>
         <th data-options="field:'id',width:80">编号</th>
-        <th data-options="field:'name',width:100">大板块名称</th>
-        <th data-options="field:'description',width:500">大板块备注</th>
+        <th data-options="field:'name',width:100">域名称</th>
+        <th data-options="field:'description',width:500">域备注</th>
     </tr>
     </thead>
 </table>
@@ -32,7 +32,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <script type="text/javascript">
     var toolbar = [{
-        text:'添加大板块',
+        text:'添加域',
         iconCls:'icon-add',
         handler:function(){alert('add')}
     },{

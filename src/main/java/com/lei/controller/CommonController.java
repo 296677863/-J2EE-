@@ -31,8 +31,8 @@ public class CommonController extends BaseUtil{
 		 //start 由于时间关系做成静态的了
 		List<MenuView> listmenu =new ArrayList<MenuView>();
 		MenuView menuView1=new MenuView("1",null,"系统管理","icon-sys","");
-		MenuView menuView2=new MenuView("2","9","大板块管理","icon-sys","zone");
-		MenuView menuView3=new MenuView("3","9","小版块管理","icon-sys","section");
+		MenuView menuView2=new MenuView("2","9","域管理","icon-sys","zone");
+		MenuView menuView3=new MenuView("3","9","主题管理","icon-sys","section");
 		MenuView menuView4=new MenuView("4","9","帖子管理","icon-sys","topic");
 		MenuView menuView5=new MenuView("5","9","用户管理","icon-sys","user");
 		MenuView menuView6=new MenuView("6","1","修改密码","icon-edit","");

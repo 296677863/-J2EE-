@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.lei.dao.TopicMapper;
+import com.lei.model.Reply;
 import com.lei.model.Topic;
 import com.lei.service.ITopicService;
 @Service("topicService")
@@ -38,7 +39,7 @@ public class TopicServiceImpl implements ITopicService{
 	}
 	@Override
 	public Topic findTopicById(int topicId) {
-		return null;
+		return topicMapper.selectByPrimaryKey(topicId);
 	}
 	@Override
 	public List<Topic> findZdTopicListBySectionId(Map map) {
@@ -50,7 +51,7 @@ public class TopicServiceImpl implements ITopicService{
 	}
 	@Override
 	public Long getNoReplyTopicCount(Topic s_topic) {
-		return null;
+		return topicMapper.getNoReplyTopicCount(s_topic);
 	}
 	@Override
 	public List<Topic> findGoodTopicListBySectionId(Map map) {
@@ -63,6 +64,10 @@ public class TopicServiceImpl implements ITopicService{
 	@Override
 	public Long getPtTopicCountBySectionId(int sectionId) {
 		return null;
+	}
+	@Override
+	public List<Reply> getReplyTopicList(Topic s_topic) {
+		return topicMapper.getReplyTopicList(s_topic);
 	}
 	
 	

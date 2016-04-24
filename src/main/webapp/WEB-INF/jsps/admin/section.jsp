@@ -12,21 +12,21 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 
 
-<h2>小板块管理</h2>
+<h2>主题管理</h2>
 <div class="demo-info">
     <div class="demo-tip icon-tip"></div>
     <div></div>
 </div>
 <div style="margin:10px 0;"></div>
-<table id="dg" class="easyui-datagrid" title="小板块列表" style="width:900px;height:600px"
+<table id="dg" class="easyui-datagrid" title="主题列表" style="width:900px;height:600px"
        data-options="rownumbers:true,singleSelect:true,pagination:true,url:'section_list',toolbar:'#tb'">
     <thead>
     <tr>
         <th data-options="field:'ck',checkbox:true"></th>
         <th data-options="field:'id',width:80">编号</th>
-        <th data-options="field:'name',width:100">小板块名称</th>
-        <th data-options="field:'logo',width:300">小板块图标</th>
-        <th data-options="field:'zoneid',width:100">所属大板块</th>
+        <th data-options="field:'name',width:100">主题名称</th>
+        <th data-options="field:'logo',width:300">主题图标</th>
+        <th data-options="field:'zoneid',width:100">所属域</th>
         <th data-options="field:'masterid',width:100">版主</th>
     </tr>
     </thead>
@@ -34,14 +34,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <div id="tb" style="padding:5px;height:auto">
     <div style="margin-bottom:5px">
-        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true">小版块添加</a>
+        <a href="#" class="easyui-linkbutton" iconCls="icon-add" plain="true">主题添加</a>
            <a href="#" class="easyui-linkbutton" iconCls="icon-edit" plain="true">修改</a>
  		<a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true">删除</a>
         <a href="#" class="easyui-linkbutton" iconCls="icon-remove" plain="true">批量删除</a>
        
     </div>
     <div>
-        小版块名称:
+      主题名称:
         <select class="easyui-combobox" panelHeight="auto" style="width:100px">
             <option value="java">Java</option>
             <option value="c">C</option>
@@ -49,7 +49,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <option value="perl">Perl</option>
             <option value="python">Python</option>
         </select>
-        所属大板块:
+        所属域:
         <select class="easyui-combobox" panelHeight="auto" style="width:100px">
             <option value="java">Java</option>
             <option value="c">C</option>

@@ -1,5 +1,6 @@
 package com.lei.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,9 +16,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.druid.util.StringUtils;
+import com.lei.model.Reply;
+import com.lei.model.Section;
 import com.lei.model.Topic;
+import com.lei.model.User;
+import com.lei.service.ISectionService;
 import com.lei.service.ITopicService;
+import com.lei.service.IUserService;
 import com.lei.util.PageUtil;
+import com.lei.view.TopicView;
 
 @Controller
 @RequestMapping("/")
@@ -26,6 +33,20 @@ public class TopicController {
 	
 	ITopicService topicnService;
 	
+	IUserService userService;
+	ISectionService sectionService;
+	
+	
+	
+	@Autowired
+	public void setSectionService(ISectionService sectionService) {
+		this.sectionService = sectionService;
+	}
+
+	@Autowired
+	public void setUserService(IUserService userService) {
+		this.userService = userService;
+	}
 
 	@Autowired
 	public void setTopicnService(ITopicService topicnService) {
@@ -55,8 +76,12 @@ public class TopicController {
 	}
 	@RequestMapping("f_topicList")
 	public String topicList(String page,String rows,int sectionId,String sectionName,HttpServletRequest request){
+		List<TopicView> topicViewList=new ArrayList<TopicView>();
+		
 		Topic topic=new Topic();
 		topic.setSectionid(sectionId);
+		Section section=sectionService.findSectionById(sectionId);
+		
 		
 		HttpSession session=request.getSession();
 		Long total=topicnService.getTopicCount(topic);
@@ -83,7 +108,43 @@ public class TopicController {
 		
 		session.setAttribute("ptTopicList", ptTopicList);
 		
+		for(Topic s_topic:ptTopicList)
+		{
+			TopicView topicView=new TopicView();
+			topicView.setSection(section);
+			topicView.setTopic(s_topic);
+			User user=userService.selectByPrimaryKey(s_topic.getUserid());
+			topicView.setUser(user);
+			List<Reply> replyList=topicnService.getReplyTopicList(s_topic);
+			topicView.setReplyList(replyList);
+			topicView.setReplyCount(replyList.size());
+			topicViewList.add(topicView);
+		}	
+		
+		session.setAttribute("topicViewList", topicViewList);
 		return "topicList";
+	}
+	
+	@RequestMapping("f_topicDetails")
+	public String topicDetails(String page,String rows,int topicId,HttpServletRequest request){
+	List<TopicView> topicViewList=new ArrayList<TopicView>();
+		
+		Topic topic =topicnService.findTopicById(topicId);
+		
+		HttpSession session=request.getSession();
+		
+		
+			TopicView topicView=new TopicView();
+			topicView.setTopic(topic);
+			User user=userService.selectByPrimaryKey(topic.getUserid());
+			topicView.setUser(user);
+			List<Reply> replyList=topicnService.getReplyTopicList(topic);
+			topicView.setReplyList(replyList);
+			topicView.setReplyCount(replyList.size());
+			topicViewList.add(topicView);
+		
+		session.setAttribute("topicViewList", topicViewList);
+		return "topDetails";
 	}
 	
 	

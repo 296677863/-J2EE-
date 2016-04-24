@@ -17,5 +17,6 @@ public interface IUserService {
 	public User login(User user);
 	public List<User> findUserList(Map<String, Object> map);
 	public int getCountUser(User user);
+	public User selectByPrimaryKey(int id);
 
 }

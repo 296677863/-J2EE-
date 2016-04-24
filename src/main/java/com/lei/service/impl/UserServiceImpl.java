@@ -60,4 +60,10 @@ public class UserServiceImpl implements IUserService {
 		return userMapper.getCountUser(user);
 	}
 
+
+	@Override
+	public User selectByPrimaryKey(int id) {
+		return userMapper.selectByPrimaryKey(id);
+	}
+
 }

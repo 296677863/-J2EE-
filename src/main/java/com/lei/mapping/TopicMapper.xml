@@ -257,7 +257,7 @@
 		<include refid="Blob_Column_List" />
 		from t_topic
 		<trim prefix="where" prefixOverrides="and|or">
-			<if test="sectionId>0">
+			<if test="sectionid>0">
 				sectionId=#{sectionId>0}
 			</if>
 			<if test="top!=2 and top!=null">
@@ -279,7 +279,7 @@
 		<include refid="Blob_Column_List" />
 		from t_topic
 		<trim prefix="where" prefixOverrides="and|or">
-			<if test="sectionId>0">
+			<if test="sectionid>0">
 				sectionId=#{sectionId>0}
 			</if>
 			<if test="top!=2 and top!=null">
@@ -294,17 +294,20 @@
 		limit #{pageUtil.start},#{pageUtil.rows}
 	</select>
 
-	<select id="getNoReplyTopicCount" resultType="java.lang.Integer"
+	<select id="getNoReplyTopicCount" resultType="java.lang.Long"
 		parameterType="com.lei.model.Topic">
 		select count(*)
 
 		from t_topic where id not in (select r.topicId from
 		t_reply r)
 
-		<if test="sectionId>0">
-			and sectionId=#{sectionId>0}
+		<if test="sectionid>0">
+			and sectionId=#{sectionid}
 		</if>
 
+	</select>
+	<select id="getReplyTopicList" resultType="com.lei.model.Reply" parameterType="com.lei.model.Topic">
+		select * from t_reply r where r.topicId =#{id}
 	</select>
 
 
@@ -316,7 +319,7 @@
 		<include refid="Blob_Column_List" />
 		from t_topic
 		<trim prefix="where" prefixOverrides="and|or">
-			<if test="sectionId>0">
+			<if test="sectionid>0">
 				sectionId=#{sectionId>0}
 			</if>
 			<if test="top!=2 and top!=null">
@@ -338,7 +341,7 @@
 		<include refid="Blob_Column_List" />
 		from t_topic
 		<trim prefix="where" prefixOverrides="and|or">
-			<if test="sectionId>0">
+			<if test="sectionid>0">
 				sectionId=#{sectionId>0}
 			</if>
 			<if test="top!=2 and top!=null">
@@ -357,7 +360,7 @@
 		select count(*)
 		from t_topic
 		<trim prefix="where" prefixOverrides="and|or">
-			<if test="sectionId>0">
+			<if test="sectionid>0">
 				sectionId=#{sectionId>0}
 			</if>
 			<if test="top!=2 and top!=null">

@@ -3,6 +3,7 @@ package com.lei.dao;
 import java.util.List;
 import java.util.Map;
 
+import com.lei.model.Reply;
 import com.lei.model.Topic;
 
 public interface TopicMapper {
@@ -35,6 +36,8 @@ public interface TopicMapper {
     public List<Topic> findNotGoodTopicListBySectionId(Map map);
     
     public Long getPtTopicCountBySectionId(int sectionId);
+    
+    public List<Reply> getReplyTopicList(Topic topic);
     
 
     

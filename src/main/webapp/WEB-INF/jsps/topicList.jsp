@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </div>
             </div>
             
-			<c:forEach items="${ptTopicList }" var="topic">
+			<c:forEach items="${topicViewList }" var="topicView">
             <div class="row">
 
 
@@ -77,18 +77,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <a href="" target="_blank">
                         <img src="resources/images/headtopic_1.gif" align="absmiddle" alt="置顶帖标志" title="置顶帖标志">
                     </a>
-                    <a href="https://bbs.aliyun.com/read/152079.html" name="readlink" id="a_ajax_152079" class="subject_t f14"><b><font color="#FF00FF">${topic.title }</font></b></a>&nbsp;  <span class="gray tpage"></span>   <img src="resources/images/img.gif" alt="img" align="absmiddle">
+                    <a href="f_topicDetails?topicId=${topicView.topic.id}" name="readlink" id="a_ajax_152079" class="subject_t f14"><b><font color="#FF00FF">${topicView.topic.title }</font></b></a>&nbsp;  <span class="gray tpage"></span>   <img src="resources/images/img.gif" alt="img" align="absmiddle">
                     <img src="resources/images/digest_2.gif" align="absmiddle" style="margin-top:4px;" alt="精华帖标志" title="精华帖标志">
                     <div class="mt10">
-                        <a href="" class="c9 mr5">${topic.userid}</a>
+                        <a href="" class="c9 mr5">${topicView.user.nickname}</a>
                             <span class="c9 mr5">
-                            发表于：${topic.publishtime }
+                            发表于：${topicView.topic.publishtime }
                             </span>
                             <span class="c9 mr5">
                             <a class="c9" href="">修改时间</a>
                             </span>
                             <span class="c6">
-                            <a class="c9" href="" title="${topic.publishtime }"> ${topic.publishtime }</a>
+                            <a class="c9" href="" title="${topicView.topic.publishtime }"> ${topicView.topic.publishtime }</a>
                             </span>
 
                     </div>
@@ -99,7 +99,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         
                     <div class="read-recommend mr5">
                         回复 <br>
-                        <strong style="font-weight:700">159</strong>
+                        <strong style="font-weight:700">${topicView.replyCount }</strong>
                     </div>
 
                 </div>
