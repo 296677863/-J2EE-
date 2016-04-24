@@ -206,7 +206,9 @@
 				good=#{topic.good}
 			</if>
 		</trim>
+		<if test="null!=pageUtil and pageUtil!=''">
 		limit #{pageUtil.start},#{pageUtil.rows}
+		</if>
 	</select>
 
 	<select id="getTopicCount" resultType="java.lang.Long"

@@ -136,20 +136,12 @@ public class UserController {
 		return mapReturn;
 	}
 	@RequestMapping("login_out")
-	public  @ResponseBody String login_out(HttpServletRequest request,HttpServletResponse response){
+	public  String login_out(HttpServletRequest request,HttpServletResponse response){
 	
 		HttpSession session=request.getSession();
-		try {
-			response.setHeader("Pragma","No-cache");
-			response.setHeader("Cache-Control","no-cache");
-			response.setDateHeader("Expires", 0);
-			response.flushBuffer();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		session.invalidate();
 		
-		return "login";
+		return "index";
 		
 	}
 

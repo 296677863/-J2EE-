@@ -41,7 +41,7 @@
             	  		</c:otherwise>
             	  	</c:choose>
             	  	</li>
-					<li class="" style="border-right:1px solid #DDDDDD;"><a href="javascript:logout()">注销</a></li>
+					<li class="" style="border-right:1px solid #DDDDDD;"><a href="user/login_out">注销</a></li>
 					<li class="" style="border-right:1px solid #DDDDDD;"><a href="javascript:checkUserLogin()">个人中心</a></<li>
           		</c:when>
           		<c:otherwise>

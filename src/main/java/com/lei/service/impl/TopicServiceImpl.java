@@ -42,11 +42,11 @@ public class TopicServiceImpl implements ITopicService{
 	}
 	@Override
 	public List<Topic> findZdTopicListBySectionId(Map map) {
-		return null;
+		return topicMapper.findTopicList(map);
 	}
 	@Override
 	public List<Topic> findPtTopicListBySectionId(Map map) {
-		return null;
+		return topicMapper.findTopicList(map);
 	}
 	@Override
 	public Long getNoReplyTopicCount(Topic s_topic) {

@@ -21,22 +21,23 @@
 
 <div class="container">
 	<!-- Example row of columns -->
+	<div class="mybox">
 	
+	<div class="row">
+	<div class="col-xs-12 col-sm-12">
 	<h3>
 		<a href=""><img style="width: 50px;" alt=""
 			src="resources/images/java-logo.gif"></a>Java web
 	</h3>
-	<div class="row">
+	</div>
 	<c:forEach items="${sectionList1 }" var="section">
-		<div class="col-md-1">
-		</div>
-		<div class="col-md-3">
+		<div class="col-xs-6 col-sm-3">
 			<table cellspacing="0" cellpadding="0" class="fl_tb">
 				<tbody>
 					<tr>
 						<td class="fl_g" width="49.9%">
 							<div class="fl_icn_g">
-								<a href="forum-plugin-1.html"><img
+								<a href="f_topicList?sectionId=${section.id }&&sectionName=${section.name}"><img
 									src="${section.logo }" alt=""><font
 									style="font-size: 20px">${section.name }</font></a>
 							</div>
@@ -60,21 +61,23 @@
 	</c:forEach>
 	</div>
 
-
+	
+	<div class="row">
+		
+	<div class="col-xs-12 col-sm-12">
 	<h3>
 		<a href=""><img style="width: 50px;" alt=""
 			src="resources/images/android.png"></a>Android4
 	</h3>
-	<div class="row">
+	</div>
 		<c:forEach items="${sectionList2 }" var="section">
-		<div class="col-md-1"></div>
-		<div class="col-md-3">
+		<div class="col-xs-6 col-sm-3">
 			<table cellspacing="0" cellpadding="0" class="fl_tb">
 				<tbody>
 					<tr>
 						<td class="fl_g" width="49.9%">
 							<div class="fl_icn_g">
-								<a href="forum-plugin-1.html"><img
+								<a href="f_topicList?sectionId=${section.id }&&sectionName=${section.name}"><img
 									src="${section.logo }" alt=""><font
 									style="font-size: 20px">${section.name }</font></a>
 							</div>
@@ -98,21 +101,22 @@
 	</c:forEach>
 
 	</div>
-
+	
+	<div class="row">
+	<div class="col-xs-12 col-sm-12">
 	<h3>
 		<a href=""><img style="width: 50px;" alt=""
 			src="resources/images/tool.jpg"></a>常用框架
 	</h3>
-	<div class="row">
+	</div>
 		<c:forEach items="${sectionList3 }" var="section">
-		<div class="col-md-1"></div>
-		<div class="col-md-3">
+		<div class="col-xs-6 col-sm-3">
 			<table cellspacing="0" cellpadding="0" class="fl_tb">
 				<tbody>
 					<tr>
 						<td class="fl_g" width="49.9%">
 							<div class="fl_icn_g">
-								<a href="forum-plugin-1.html"><img
+								<a href="f_topicList?sectionId=${section.id }&&sectionName=${section.name}"><img
 									src="${section.logo }" alt=""><font
 									style="font-size: 20px">${section.name }</font></a>
 							</div>
@@ -136,7 +140,8 @@
 	</c:forEach>
 
 	</div>
-
+	</div>
 </div>
+
 
 
