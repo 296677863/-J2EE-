@@ -15,36 +15,28 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>${sectionName}</title>
-
     <!-- Bootstrap core CSS -->
     <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="resources/css/sticky-footer.css" rel="stylesheet">
-
     <link  rel="stylesheet" type="text/css" href="resources/css/mycss.css" />
     <!--css-->
      <!-- end: CSS -->
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="resources/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="resources/js/ie-emulation-modes-warning.js"></script>
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src=resources/js/html5shiv.min.js"></script>
       <script src="resources/js/respond.min.js"></script>
     <![endif]-->
-	
 	<script src="resources/js/ie-emulation-modes-warning.js"></script>
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="resources/bootstrap/js/bootstrap.js"></script>
 </head>
-
 <body>
-
 <jsp:include page="common/top.jsp"/>
 <div class="container">
     <div class="panel panel-info">
@@ -53,7 +45,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div class="panel-body">
             <div class="row">
-
                 <div class="col-xs-12 col-sm-12">
                     <ol class="breadcrumb">
                         <li><a href="#">首页</a></li>
@@ -64,14 +55,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     </div>
                 </div>
             </div>
-            
 			<c:forEach items="${topicViewList }" var="topicView">
-            <div class="row">
-
-
-
-
-
+	            <div class="row">
                 <div class="col-xs-9 col-sm-9">
                     <img class="pic" src="resources/images/32-35615732.jpg" border="0" height="40px" >
                     <a href="" target="_blank">
@@ -82,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     <div class="mt10">
                         <a href="" class="c9 mr5">${topicView.user.nickname}</a>
                             <span class="c9 mr5">
-                            发表于：${topicView.topic.publishtime }
+                            	发表于：${topicView.topic.publishtime }
                             </span>
                             <span class="c9 mr5">
                             <a class="c9" href="">修改时间</a>
@@ -90,23 +75,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <span class="c6">
                             <a class="c9" href="" title="${topicView.topic.publishtime }"> ${topicView.topic.publishtime }</a>
                             </span>
-
                     </div>
                 </div>
-
                 <div class="col-xs-2 col-sm-2 col-xs-offset-1">
-
-        
-                    <div class="read-recommend mr5">
-                        回复 <br>
+					   <div class="read-recommend mr5">
+                       	 回复 <br>
                         <strong style="font-weight:700">${topicView.replyCount }</strong>
                     </div>
-
                 </div>
             </div>
             </c:forEach>
-
-          
             <div class="row">
                 <nav>
                     <ul class="pagination">
@@ -123,12 +101,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
         </div>
     </div>
-
-
-
 </div><!-- /.container -->
 	<jsp:include page="common/footer.jsp"/>
-
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

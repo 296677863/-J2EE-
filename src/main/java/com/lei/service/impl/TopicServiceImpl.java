@@ -1,5 +1,6 @@
 package com.lei.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -68,6 +69,12 @@ public class TopicServiceImpl implements ITopicService{
 	@Override
 	public List<Reply> getReplyTopicList(Topic s_topic) {
 		return topicMapper.getReplyTopicList(s_topic);
+	}
+	@Override
+	public Topic findTopicById(Topic s_topic) {
+		Map map=new HashMap();
+		map.put("topic", s_topic);
+		return topicMapper.findTopicList(map).get(0);
 	}
 	
 	

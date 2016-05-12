@@ -77,17 +77,13 @@ public class TopicController {
 	@RequestMapping("f_topicList")
 	public String topicList(String page,String rows,int sectionId,String sectionName,HttpServletRequest request){
 		List<TopicView> topicViewList=new ArrayList<TopicView>();
-		
 		Topic topic=new Topic();
 		topic.setSectionid(sectionId);
 		Section section=sectionService.findSectionById(sectionId);
-		
-		
 		HttpSession session=request.getSession();
 		Long total=topicnService.getTopicCount(topic);
 		session.setAttribute("total", total);
 		session.setAttribute("sectionName", sectionName);
-		
 		if (StringUtils.isEmpty(page)) {
 			page="1";
 		}
@@ -96,18 +92,13 @@ public class TopicController {
 		}
 		PageUtil pageUtil =new PageUtil(Integer.parseInt(page),Integer.parseInt(rows));
 		Map<String,Object>map=new HashMap<String,Object>();
-		
 		map.put("topic",topic);
 		List<Topic> zdTopicList=topicnService.findZdTopicListBySectionId(map);
-		
 		session.setAttribute("zdTopicList", zdTopicList);
-	
 		map.put("pageUtil",pageUtil);
 		map.put("sectionName",sectionName);
 		List<Topic> ptTopicList=topicnService.findPtTopicListBySectionId(map);
-		
 		session.setAttribute("ptTopicList", ptTopicList);
-		
 		for(Topic s_topic:ptTopicList)
 		{
 			TopicView topicView=new TopicView();
@@ -120,7 +111,6 @@ public class TopicController {
 			topicView.setReplyCount(replyList.size());
 			topicViewList.add(topicView);
 		}	
-		
 		session.setAttribute("topicViewList", topicViewList);
 		return "topicList";
 	}
@@ -128,12 +118,8 @@ public class TopicController {
 	@RequestMapping("f_topicDetails")
 	public String topicDetails(String page,String rows,int topicId,HttpServletRequest request){
 	List<TopicView> topicViewList=new ArrayList<TopicView>();
-		
 		Topic topic =topicnService.findTopicById(topicId);
-		
 		HttpSession session=request.getSession();
-		
-		
 			TopicView topicView=new TopicView();
 			topicView.setTopic(topic);
 			User user=userService.selectByPrimaryKey(topic.getUserid());
@@ -142,7 +128,6 @@ public class TopicController {
 			topicView.setReplyList(replyList);
 			topicView.setReplyCount(replyList.size());
 			topicViewList.add(topicView);
-		
 		session.setAttribute("topicViewList", topicViewList);
 		return "topDetails";
 	}

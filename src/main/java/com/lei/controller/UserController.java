@@ -106,7 +106,6 @@ public class UserController {
 			session.setAttribute("currentUser", currentUser);
 			session.removeAttribute("error");
 		}
-
 		if (currentUser.getType() == 3) {
 			model = new ModelAndView("index");
 		} else {
@@ -137,10 +136,8 @@ public class UserController {
 	}
 	@RequestMapping("login_out")
 	public  String login_out(HttpServletRequest request,HttpServletResponse response){
-	
 		HttpSession session=request.getSession();
 		session.invalidate();
-		
 		return "index";
 		
 	}

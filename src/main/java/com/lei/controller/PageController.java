@@ -74,7 +74,10 @@ public class PageController {
 	public String zone(){
 		return "admin/zone";
 	}
-	
+	@RequestMapping("register")
+	public String register(){
+		return "sign_up";
+	}
 
 
 }

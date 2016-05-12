@@ -195,7 +195,7 @@
 			</if>
 
 			<if test="topic.sectionid!=null and topic.sectionid!=''">
-				sectionId=#{topic.sectionid}
+				sectionId=#{topic.sectionid} 
 			</if>
 
 			<if test="topic.top!=2 and topic.top!=null">
@@ -221,7 +221,7 @@
 			<if test="content!=null and content!=''">
 				content like concat('%',#{content},'%')
 			</if>
-			<if test="userid!=null and userrid!=''">
+			<if test="userid!=null and userid!=''">
 				userId=#{userid}
 			</if>
 
@@ -237,14 +237,9 @@
 			<if test="sectionid!=null and sectionid!=''">
 				and sectionId=#{sectionid}
 			</if>
-
-
-
 			<if test="top!=2 and top!=null">
 				top=#{top}
 			</if>
-
-
 		</trim>
 
 	</select>

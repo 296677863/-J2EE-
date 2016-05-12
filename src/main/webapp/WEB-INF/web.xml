@@ -16,8 +16,6 @@
 		<param-value>classpath:spring.xml,classpath:spring-mybatis.xml</param-value>
 	</context-param>
 
-
-
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -26,7 +24,6 @@
 			<param-value>UTF-8</param-value>
 		</init-param>
 	</filter>
-
 	<servlet>
 		<servlet-name>kaptcha</servlet-name>
 		<servlet-class>com.google.code.kaptcha.servlet.KaptchaServlet</servlet-class>
@@ -134,14 +131,10 @@
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
-
 	<listener>
 		<description>spring listener</description>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-
-
-
 	<servlet>
 		<description>spring mvc servlet</description>
 		<servlet-name>springmvc</servlet-name>
@@ -157,8 +150,6 @@
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
-
 	<listener>
 		<listener-class>com.lei.listener.InitListener</listener-class>
 	</listener>

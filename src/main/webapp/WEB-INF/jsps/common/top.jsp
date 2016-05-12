@@ -21,13 +21,11 @@
 				<li><a href="#">在线文档</a></li>
 				<li><a href="#">站点帮助</a></li>
 				<li><a href="#">资源下载</a></li>
-            
           </ul>
           <!--currentUser.sectionList.size()!=0&&-->
           <ul class="nav navbar-nav navbar-right">
           	<c:choose>
           		<c:when test="${currentUser!=null }">
-          	
           			<li class="" style="border-right:1px solid #DDDDDD;"><a href="#">当前用户：${currentUser.nickname }『
           			<c:choose>
             	  		<c:when test="${currentUser.type!=2 }">
@@ -51,7 +49,6 @@
             		<c:if test="${currentUser!=null }">
             		<li class="" style="border-right:1px solid #DDDDDD;"><a href="javascript:checkUserLogin()" >个人中心</a></li>
             		</c:if>
-					
           		</c:otherwise>
           	</c:choose>
 		  </ul>

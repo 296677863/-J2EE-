@@ -33,6 +33,9 @@ public interface ITopicService {
 
 
 	public List<Reply> getReplyTopicList(Topic s_topic);
+
+
+	public Topic findTopicById(Topic s_topic);
 	
 
 }

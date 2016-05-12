@@ -27,12 +27,17 @@
   </select>
   <select id="findUserList" resultType="com.lei.model.User" parameterType="Map">
   		select * from t_user
-  	<trim prefix="where" prefixOverrides="and|or">
+  		<trim prefix="where" prefixOverrides="and|or">
   			<if test="user.nickname!=null and user.nickname!=''">
   			   title like concat('%',#{user.nickname},'%')
   			</if>
+  			<if test="user.id!=null and user.id!=''">
+  				id=#{user.id}
+  			</if>
   	   </trim>
-  		limit #{pageUtil.start},#{pageUtil.rows}
+  		<if test="null!=pageUtil and pageUtil!=''">
+		limit #{pageUtil.start},#{pageUtil.rows}
+		</if>
   </select>
     <select id="getCountUser" resultType="java.lang.Integer" parameterType="com.lei.model.User">
   		select count(*) from t_user

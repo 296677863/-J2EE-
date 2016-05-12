@@ -83,17 +83,17 @@
 						<div class="text-right mb-sm">
 							<a href="/user/auth/login.php" class="text-muted">已有帐号?点我登录</a>
 						</div>
-						<div class="form-group has-feedback">
-							<span class="fa fa-user form-control-feedback text-muted"></span>
-							<input id="user-name" name="user_name" type="text"
-								placeholder="用户登录名" value=""
-								class="form-control required {minlength:4,maxlength:24,remote:'/user/auth/check_user.php',messages:{remote:'该用户名已被注册！'}}">
-						</div>
+					
 						<div class="form-group has-feedback">
 							<span class="fa fa-envelope form-control-feedback text-muted"></span>
 							<input id="user-email" name="email" type="text"
-								placeholder="Email" value=""
+								placeholder="用户登录Email" value=""
 								class="form-control email {remote:'/user/auth/check_user.php',messages:{remote:'该邮箱已被注册！'}}">
+						</div>
+						<div class="form-group has-feedback">
+							<span class="fa fa-users form-control-feedback text-muted"></span>
+							<input id="aff-id" name="aff_id" type="text"
+								placeholder="用户昵称" value="" class="form-control">
 						</div>
 						<div class="form-group has-feedback">
 							<span class="fa fa-lock form-control-feedback text-muted"></span>
@@ -107,11 +107,15 @@
 								placeholder="确认密码" value=""
 								class="form-control required {minlength:6,maxlength:24,equalTo:'#password'}">
 						</div>
+						
 						<div class="form-group has-feedback">
-							<span class="fa fa-users form-control-feedback text-muted"></span>
-							<input id="aff-id" name="aff_id" type="text"
-								placeholder="推荐人ID（可不填）" value="" class="form-control">
+							<span class="fa fa-user form-control-feedback text-muted"></span>
+							<input id="user-name" name="user_name" type="text"
+								placeholder="手机号码" value=""
+								class="form-control required {minlength:4,maxlength:24,remote:'/user/auth/check_user.php',messages:{remote:'该用户名已被注册！'}}">
 						</div>
+						
+						
 						<div class="clearfix">
 							<div class="checkbox c-checkbox pull-left mt0">
 								<label><input id="agree-ss" type="checkbox" name="agree"

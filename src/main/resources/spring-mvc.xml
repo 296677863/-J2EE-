@@ -58,9 +58,6 @@ http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 		</property>
 		<property name="ignoreAcceptHeader" value="true" />
 	</bean>
-
-	
-
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"

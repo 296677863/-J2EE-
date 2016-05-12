@@ -47,7 +47,6 @@ public class SectionController {
 		}
 		PageUtil pageUtil =new PageUtil(Integer.parseInt(page),Integer.parseInt(rows));
 		Map<String,Object>map=new HashMap<String,Object>();
-		
 		map.put("section",section);
 		map.put("pageUtil",pageUtil);
 		List<Section> sectionList=sectionService.findSectionList(map);

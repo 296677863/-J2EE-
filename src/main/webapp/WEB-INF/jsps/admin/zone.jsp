@@ -28,8 +28,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </tr>
     </thead>
 </table>
-
-
 <script type="text/javascript">
     var toolbar = [{
         text:'添加域',

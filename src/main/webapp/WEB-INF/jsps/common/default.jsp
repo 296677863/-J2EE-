@@ -30,16 +30,16 @@
 			src="resources/images/java-logo.gif"></a>Java web
 	</h3>
 	</div>
-	<c:forEach items="${sectionList1 }" var="section">
+	<c:forEach items="${sectionViewList1 }" var="sectionView">
 		<div class="col-xs-6 col-sm-3">
 			<table cellspacing="0" cellpadding="0" class="fl_tb">
 				<tbody>
 					<tr>
 						<td class="fl_g" width="49.9%">
 							<div class="fl_icn_g">
-								<a href="f_topicList?sectionId=${section.id }&&sectionName=${section.name}"><img
-									src="${section.logo }" alt=""><font
-									style="font-size: 20px">${section.name }</font></a>
+								<a href="f_topicList?sectionId=${sectionView.section.id }&&sectionName=${sectionView.section.name}"><img
+									src="${sectionView.section.logo }" alt=""><font
+									style="font-size: 20px">${sectionView.section.name }</font></a>
 							</div>
 							<dl>
 								<dt></dt>
@@ -50,7 +50,7 @@
 								</dd>
 								<dd>
 									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
-										title="${section.masterid }">${section.masterid }</span></em>
+										title="${section.masterid }">${sectionView.user.nickname }</span></em>
 								</dd>
 							</dl>
 						</td>
@@ -70,16 +70,16 @@
 			src="resources/images/android.png"></a>Android4
 	</h3>
 	</div>
-		<c:forEach items="${sectionList2 }" var="section">
+		<c:forEach items="${sectionViewList2 }" var="sectionView">
 		<div class="col-xs-6 col-sm-3">
 			<table cellspacing="0" cellpadding="0" class="fl_tb">
 				<tbody>
 					<tr>
 						<td class="fl_g" width="49.9%">
 							<div class="fl_icn_g">
-								<a href="f_topicList?sectionId=${section.id }&&sectionName=${section.name}"><img
-									src="${section.logo }" alt=""><font
-									style="font-size: 20px">${section.name }</font></a>
+								<a href="f_topicList?sectionId=${sectionView.section.id }&&sectionName=${sectionView.section.name}"><img
+									src="${sectionView.section.logo }" alt=""><font
+									style="font-size: 20px">${sectionView.section.name }</font></a>
 							</div>
 							<dl>
 								<dt></dt>
@@ -90,7 +90,7 @@
 								</dd>
 								<dd>
 									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
-										title="${section.masterid }">${section.masterid }</span></em>
+										title="${section.masterid }">${sectionView.user.nickname }</span></em>
 								</dd>
 							</dl>
 						</td>
@@ -109,16 +109,16 @@
 			src="resources/images/tool.jpg"></a>常用框架
 	</h3>
 	</div>
-		<c:forEach items="${sectionList3 }" var="section">
+		<c:forEach items="${sectionViewList3 }" var="sectionView">
 		<div class="col-xs-6 col-sm-3">
 			<table cellspacing="0" cellpadding="0" class="fl_tb">
 				<tbody>
 					<tr>
 						<td class="fl_g" width="49.9%">
 							<div class="fl_icn_g">
-								<a href="f_topicList?sectionId=${section.id }&&sectionName=${section.name}"><img
-									src="${section.logo }" alt=""><font
-									style="font-size: 20px">${section.name }</font></a>
+								<a href="f_topicList?sectionId=${sectionView.section.id }&&sectionName=${sectionView.section.name}"><img
+									src="${sectionView.section.logo }" alt=""><font
+									style="font-size: 20px">${sectionView.section.name }</font></a>
 							</div>
 							<dl>
 								<dt></dt>
@@ -129,7 +129,7 @@
 								</dd>
 								<dd>
 									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
-										title="${section.masterid }">${section.masterid }</span></em>
+										title="${section.masterid }">${sectionView.user.nickname }</span></em>
 								</dd>
 							</dl>
 						</td>
