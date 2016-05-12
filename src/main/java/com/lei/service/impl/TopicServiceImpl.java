@@ -23,8 +23,8 @@ public class TopicServiceImpl implements ITopicService{
 		this.topicMapper = topicMapper;
 	}
 	@Override
-	public void saveTopic(Topic topic) {
-		
+	public int saveTopic(Topic topic) {
+		return topicMapper.insert(topic);
 	}
 	@Override
 	public void deleteTopic(Topic topic) {

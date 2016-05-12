@@ -78,6 +78,7 @@ public class PageController {
 	public String register(){
 		return "sign_up";
 	}
+	
 
 
 }

@@ -59,14 +59,16 @@ public class InitListener extends ContextLoaderListener implements ApplicationCo
 				sectionView.setSection(section);
 				Topic s_topic=new Topic(); 
 				s_topic.setSectionid(section.getId());
-				Long tatolCount=topicService.getTopicCount(s_topic);			//板块的总帖数
+				Long totalCount=topicService.getTopicCount(s_topic);			//板块的总帖数
 				s_topic.setGood(1);
 				Long goodCount=topicService.getTopicCount(s_topic);			//板块的精华帖数
 				s_topic.setGood(0);
-				Long noReplyCount=topicService.getNoReplyTopicCount(s_topic);			//板块的无回复帖数
-				sectionTopicCount.put(section, tatolCount);
-				sectionGoodTopicCount.put(section, goodCount);
-				sectionNoReplyTopicCount.put(section, noReplyCount);
+				Long noReplyCount=topicService.getNoReplyTopicCount(s_topic);	
+				//板块的无回复帖数
+				sectionView.setTotalCount(String.valueOf(totalCount));
+				sectionView.setNoReplyCount(String.valueOf(noReplyCount));
+				sectionView.setGoodCount(String.valueOf(goodCount));
+				
 				User user=new User();
 				user.setId(section.getMasterid());
 				Map map=(Map) new HashMap();

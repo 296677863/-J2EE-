@@ -8,7 +8,7 @@ import com.lei.model.Topic;
 
 public interface ITopicService {
 	
-	public void saveTopic(Topic topic);
+	public int saveTopic(Topic topic);
 	
 	
 	public void deleteTopic(Topic topic);

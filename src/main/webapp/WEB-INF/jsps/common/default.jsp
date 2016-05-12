@@ -44,13 +44,13 @@
 							<dl>
 								<dt></dt>
 								<dd>
-									<em>帖子总数: <span title="${sectionTopicCount.get(section) }">${sectionTopicCount.get(section) }</span></em>, <em>精华帖子:
-										<span title="${sectionGoodTopicCount.get(section) }">${sectionGoodTopicCount.get(section) }</span>
+									<em>帖子总数: <span title="${sectionView.totalCount }">${sectionView.totalCount }</span></em>, <em>精华帖子:
+										<span title="${sectionView.goodCount }">${sectionView.goodCount }</span>
 									</em>
 								</dd>
 								<dd>
-									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
-										title="${section.masterid }">${sectionView.user.nickname }</span></em>
+									<em>未回复:<span title="${sectionView.noReplyCount }">${sectionView.noReplyCount }</span></em>, <em>版主: <span
+										title="${sectionView.user.nickname }">${sectionView.user.nickname }</span></em>
 								</dd>
 							</dl>
 						</td>
@@ -84,13 +84,13 @@
 							<dl>
 								<dt></dt>
 								<dd>
-									<em>帖子总数: <span title="${sectionTopicCount.get(section) }">${sectionTopicCount.get(section) }</span></em>, <em>精华帖子:
-										<span title="${sectionGoodTopicCount.get(section) }">${sectionGoodTopicCount.get(section) }</span>
+									<em>帖子总数: <span title="${sectionView.totalCount }">${sectionView.totalCount }</span></em>, <em>精华帖子:
+										<span title="${sectionView.goodCount }">${sectionView.goodCount }</span>
 									</em>
 								</dd>
 								<dd>
-									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
-										title="${section.masterid }">${sectionView.user.nickname }</span></em>
+									<em>未回复:<span title="${sectionView.noReplyCount }">${sectionView.noReplyCount }</span></em>, <em>版主: <span
+										title="${sectionView.user.nickname }">${sectionView.user.nickname }</span></em>
 								</dd>
 							</dl>
 						</td>
@@ -123,13 +123,13 @@
 							<dl>
 								<dt></dt>
 								<dd>
-									<em>帖子总数: <span title="${sectionTopicCount.get(section) }">${sectionTopicCount.get(section) }</span></em>, <em>精华帖子:
-										<span title="${sectionGoodTopicCount.get(section) }">${sectionGoodTopicCount.get(section) }</span>
+									<em>帖子总数: <span title="${sectionView.totalCount }">${sectionView.totalCount }</span></em>, <em>精华帖子:
+										<span title="${sectionView.goodCount }">${sectionView.goodCount }</span>
 									</em>
 								</dd>
 								<dd>
-									<em>未回复:<span title="${sectionNoReplyTopicCount.get(section) }">${sectionNoReplyTopicCount.get(section) }</span></em>, <em>版主: <span
-										title="${section.masterid }">${sectionView.user.nickname }</span></em>
+									<em>未回复:<span title="${sectionView.noReplyCount }">${sectionView.noReplyCount }</span></em>, <em>版主: <span
+										title="${sectionView.user.nickname }">${sectionView.user.nickname }</span></em>
 								</dd>
 							</dl>
 						</td>
