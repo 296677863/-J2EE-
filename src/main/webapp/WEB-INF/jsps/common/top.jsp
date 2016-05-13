@@ -35,7 +35,7 @@
             	  			版主』</a>
             	  		</c:when>
             	  		<c:otherwise>
-            	  			管理员』</a>
+            	  			管理员』</a><li class="" style="border-right:1px solid #DDDDDD;"><a href="user/login">后台</a></li>
             	  		</c:otherwise>
             	  	</c:choose>
             	  	</li>

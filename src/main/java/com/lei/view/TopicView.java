@@ -15,6 +15,7 @@ public class TopicView {
 	private User user;	
 	private int replyCount;
 					
+	private List<ReplyView> replyViewList=new ArrayList<ReplyView>();
 	private List<Reply> replyList=new ArrayList<Reply>();
 
 	public Topic getTopic() {
@@ -41,12 +42,13 @@ public class TopicView {
 		this.user = user;
 	}
 
-	public List<Reply> getReplyList() {
-		return replyList;
+
+	public List<ReplyView> getReplyViewList() {
+		return replyViewList;
 	}
 
-	public void setReplyList(List<Reply> replyList) {
-		this.replyList = replyList;
+	public void setReplyViewList(List<ReplyView> replyViewList) {
+		this.replyViewList = replyViewList;
 	}
 
 	public int getReplyCount() {
@@ -55,6 +57,14 @@ public class TopicView {
 
 	public void setReplyCount(int replyCount) {
 		this.replyCount = replyCount;
+	}
+
+	public List<Reply> getReplyList() {
+		return replyList;
+	}
+
+	public void setReplyList(List<Reply> replyList) {
+		this.replyList = replyList;
 	}
 	
 	

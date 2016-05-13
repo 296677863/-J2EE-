@@ -1,8 +1,11 @@
 package com.lei.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -29,7 +32,14 @@ public class ReplyController {
 		this.replyService = replyService;
 	}
 
-
+	@RequestMapping("f_insertReply")
+	public String insertReply(Reply reply,HttpServletRequest request){
+		reply.setPublishtime(new Date());
+		reply.setModifytime(new Date());
+		replyService.saveReply(reply);
+		return "redirect:f_topicDetails?topicId="+reply.getTopicid();
+		
+	}
 	
 	
 

@@ -27,6 +27,7 @@ import com.lei.service.ISectionService;
 import com.lei.service.ITopicService;
 import com.lei.service.IUserService;
 import com.lei.util.PageUtil;
+import com.lei.view.ReplyView;
 import com.lei.view.TopicView;
 
 @Controller
@@ -136,30 +137,42 @@ public class TopicController {
 	@RequestMapping("f_topicDetails")
 	public String topicDetails(String page,String rows,int topicId,HttpServletRequest request){
 	List<TopicView> topicViewList=new ArrayList<TopicView>();
+	
 		Topic topic =topicnService.findTopicById(topicId);
 		HttpSession session=request.getSession();
 			TopicView topicView=new TopicView();
 			topicView.setTopic(topic);
 			User user=userService.selectByPrimaryKey(topic.getUserid());
 			topicView.setUser(user);
+			List<ReplyView> replyViewList=new ArrayList<ReplyView>();
 			List<Reply> replyList=topicnService.getReplyTopicList(topic);
-			topicView.setReplyList(replyList);
+			for(Reply reply:replyList){
+				ReplyView replyView=new ReplyView();
+				replyView.setReply(reply);
+				User users=userService.selectByPrimaryKey(reply.getUserid());
+				replyView.setUser(users);
+				replyViewList.add(replyView);
+			}
+			topicView.setReplyViewList(replyViewList);
 			topicView.setReplyCount(replyList.size());
 			topicViewList.add(topicView);
 		session.setAttribute("topicViewList", topicViewList);
+		session.setAttribute("topicId",topicId);
 
 		return "topDetails";
 	}
 	@RequestMapping("f_insertTopic")
-	public void f_insertTopic(Topic topic,HttpServletRequest request){
+	public String f_insertTopic(Topic topic,HttpServletRequest request){
 		Map<String,Object> map=new HashMap<String,Object>();
 		topic.setPublishtime(new Date());
 		topic.setModifytime(new Date());
 		topic.setGood(0);
 		topic.setTop(0);
 		topicnService.saveTopic(topic);
-		
+		return "redirect:f_topicList?sectionId="+topic.getSectionid();
 	}
+	
+
 	
 	
 

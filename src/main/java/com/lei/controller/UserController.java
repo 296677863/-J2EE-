@@ -45,10 +45,10 @@ public class UserController {
 		ModelAndView model=null;
 		User currentUser=(User) session.getAttribute("currentUser");
 		if(currentUser!=null){
-			if (currentUser.getType() == 3) {
-				model = new ModelAndView("index");
-			} else {
+			if (currentUser.getType() == 2) {
 				model = new ModelAndView("admin/index");
+			} else {
+				model = new ModelAndView("index");
 			}
 			return model;
 		}
@@ -106,10 +106,10 @@ public class UserController {
 			session.setAttribute("currentUser", currentUser);
 			session.removeAttribute("error");
 		}
-		if (currentUser.getType() == 3) {
-			model = new ModelAndView("index");
-		} else {
+		if (currentUser.getType() == 2) {
 			model = new ModelAndView("admin/index");
+		} else {
+			model = new ModelAndView("index");
 		}
 		return model;
 	}

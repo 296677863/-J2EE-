@@ -37,7 +37,7 @@ public class ReplyServiceImpl implements IReplyService{
 	}
 	@Override
 	public void saveReply(Reply reply) {
-		replyMapper.selectByPrimaryKey(reply.getId());
+		replyMapper.insert(reply);
 	}
 	@Override
 	public void deleteReply(Reply reply) {

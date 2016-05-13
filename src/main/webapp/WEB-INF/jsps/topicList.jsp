@@ -39,9 +39,12 @@
 <script src="resources/bootstrap/js/bootstrap.js"></script>
 <script type="text/javascript">
 	function insertTopic() {
-		
-		$("#finsertTopic").submit();
+		var userid=$("#userid").val();
+		if(userid==null||userid==''){
+			alert("请登录");
 			return false;
+		}
+		$("#finsertTopic").submit();
 	}
 </script>
 </head>
@@ -60,8 +63,8 @@
 							<li class="active">${sectionName }</li>
 						</ol>
 						<div class="btn-group" role="group">
-							<button type="button" class="btn btn-info" id="insertTopic"
-								onclick="insertTopic()">发表主题</button>
+							<button type="button" class="btn btn-info" 
+								><a href="#content">发表主题</a></button>
 						</div>
 					</div>
 				</div>
@@ -156,15 +159,15 @@
 
 	<table>
 		<form action="f_insertTopic" id="finsertTopic" method="post">
-			<input type="hidden" name="userid" value="${currentUser.id }" /> <input
-				type="hidden" name="sectionid" value="${sectionId }" />
+			<input type="hidden" name="userid" id="userid" value="${currentUser.id }" /> <input
+				type="hidden" name="sectionid" id="sectionid" value="${sectionId }" />
 			<tr>
 				<td>发表标题：</td>
 				<td><input type="text" name="title"></td>
 			</tr>
 			<tr>
 				<td>发表内容：</td>
-				<td><textarea name="content"></textarea></td>
+				<td><textarea name="content" id="content"></textarea></td>
 			</tr>
 			<tr>
 				<td><input type="submit" value="发表" onclick="insertTopic();return false;"/></td>

@@ -41,6 +41,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<script src="resources/js/jquery.min.js"></script>
 	<script src="resources/bootstrap/js/bootstrap.min.js"></script>
 	<script src="resources/bootstrap/js/bootstrap.js"></script>
+	<script type="text/javascript">
+	function saveReply() {
+		var userid=$("#userid").val();
+		if(userid==null||userid==''){
+			alert("请登录");
+			return false;
+		}
+		$("#finsertReply").submit();
+	}
+</script>
 </head>
 
 <body>
@@ -63,7 +73,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         <li class="active">Data</li>
                     </ol>
                     <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-info">回复该贴</button>
+                        <button type="button" class="btn btn-info"><a href="#Content">回复该贴</a></button>
                     </div>
                 </div>
             </div>
@@ -156,15 +166,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
             </div>
             
-            <c:forEach items="${topicView.replyList }" var="reply" varStatus="status">
+            <c:forEach items="${topicView.replyViewList }" var="replyView" varStatus="status">
             <div class="row">
 
                 <div class="col-xs-3 col-sm-3">
 
                     <div class="panel panel-default">
                         <div class="panel-body">
-							<p>▲${(page-1)*10+status.index+1 }楼</p>
-                            <p>${reply.userid }回复于:『${reply.publishtime }』</p>
+							<p>▲${status.index+1 }楼</p>
+                            <p>${replyView.user.nickname }回复于:『${replyView.reply.publishtime }』</p>
                         </div>
 
                         <!-- Table -->
@@ -205,7 +215,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 </div>
                             </div>
                             <div class="panel-body">
-                                <p>	${reply.content }</p>
+                                <p>	${replyView.reply.content }</p>
                             </div>
 
 
@@ -225,17 +235,17 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					</div>
 				
 				  <div class="col-xs-9 col-sm-9">
-					<form id="replyForm" class="form-horizontal" style="margin-top: 10px;">
+					<form id="finsertReply" action="f_insertReply" "form-horizontal" style="margin-top: 10px;" method="post">
 					
 						
 								【回复内容】:
 						
-								<textarea name="reply.content" id="Content" cols="50" style="height:200px;width: 800px;" ></textarea>
+								<textarea name="content" id="Content" cols="50" style="height:200px;width: 800px;" ></textarea>
 						
-								<input id="userId" name="reply.user.id" value="${currentUser.id }" type="hidden"/>
-								<input id="topicId" name="reply.topic.id" value="${topicView.topic.id }" type="hidden"/>
-							
-								<Button class="btn btn-primary " data-dismiss="modal" aria-hidden="true" type="button" onclick="javascript:saveReply()">提交</Button>
+								<input id="userid" name="userid" value="${currentUser.id }" type="hidden"/>
+								<input id="topicid" name="topicid" value="${topicId }" type="hidden"/>
+								<input type="submit" value="回复" onclick="saveReply();return false;"/>
+								<Button class="btn btn-primary " data-dismiss="modal" aria-hidden="true" type="button" onclick="saveReply();return false;">提交</Button>
 								<font id="error"></font>
 						
 					
